@@ -1,0 +1,650 @@
+filename: mint_approval.py
+timestamp: 1668280420
+compiled: BiADAAEEJgICSWQLdmVzdGluZ0FkZHIxGCISQAENMRkjEkABBDEZgQISQAD6MRkkEkAA8TEZgQUSQADnMRkiEkAAAQAxIDIDEjEJMgMSEDEVMgMSEEQ2GgCAC2NyZWF0ZUFzc2V0EkAAdTYaAIAPdHJhbnNmZXJWZXN0aW5nEkAAHzYaAIAOdmVzdGluZ0FjY291bnQSQAABACk2HAFnI0MxIDIDEjEJMgMSEDEVMgMSEEQxADIJEkQoZDYwABJENhwBKWQSRLEkshA2HAGyFIHA0eEjshI2MACyEbMjQzEgMgMSMQkyAxIQMRUyAxIQRDEAMgkSRChkIhJEsYEDshCBgMLXL7IiIrIjgANWQUOyJYAGVkFDb2lusiazKLQ8ZyNDIkMiQyNDIkMxIDIDEjEJMgMSEDEVMgMSEEQjQw==
+compiledHash: PY3I7VX5VHPL4HQOYHF4BSH5TLQNR4BWGJG7SBYJATN45T2GLJM44HB37I
+srcHash: 4181718679
+base64ToBytes:
+  - 6
+  - 32
+  - 3
+  - 0
+  - 1
+  - 4
+  - 38
+  - 2
+  - 2
+  - 73
+  - 100
+  - 11
+  - 118
+  - 101
+  - 115
+  - 116
+  - 105
+  - 110
+  - 103
+  - 65
+  - 100
+  - 100
+  - 114
+  - 49
+  - 24
+  - 34
+  - 18
+  - 64
+  - 1
+  - 13
+  - 49
+  - 25
+  - 35
+  - 18
+  - 64
+  - 1
+  - 4
+  - 49
+  - 25
+  - 129
+  - 2
+  - 18
+  - 64
+  - 0
+  - 250
+  - 49
+  - 25
+  - 36
+  - 18
+  - 64
+  - 0
+  - 241
+  - 49
+  - 25
+  - 129
+  - 5
+  - 18
+  - 64
+  - 0
+  - 231
+  - 49
+  - 25
+  - 34
+  - 18
+  - 64
+  - 0
+  - 1
+  - 0
+  - 49
+  - 32
+  - 50
+  - 3
+  - 18
+  - 49
+  - 9
+  - 50
+  - 3
+  - 18
+  - 16
+  - 49
+  - 21
+  - 50
+  - 3
+  - 18
+  - 16
+  - 68
+  - 54
+  - 26
+  - 0
+  - 128
+  - 11
+  - 99
+  - 114
+  - 101
+  - 97
+  - 116
+  - 101
+  - 65
+  - 115
+  - 115
+  - 101
+  - 116
+  - 18
+  - 64
+  - 0
+  - 117
+  - 54
+  - 26
+  - 0
+  - 128
+  - 15
+  - 116
+  - 114
+  - 97
+  - 110
+  - 115
+  - 102
+  - 101
+  - 114
+  - 86
+  - 101
+  - 115
+  - 116
+  - 105
+  - 110
+  - 103
+  - 18
+  - 64
+  - 0
+  - 31
+  - 54
+  - 26
+  - 0
+  - 128
+  - 14
+  - 118
+  - 101
+  - 115
+  - 116
+  - 105
+  - 110
+  - 103
+  - 65
+  - 99
+  - 99
+  - 111
+  - 117
+  - 110
+  - 116
+  - 18
+  - 64
+  - 0
+  - 1
+  - 0
+  - 41
+  - 54
+  - 28
+  - 1
+  - 103
+  - 35
+  - 67
+  - 49
+  - 32
+  - 50
+  - 3
+  - 18
+  - 49
+  - 9
+  - 50
+  - 3
+  - 18
+  - 16
+  - 49
+  - 21
+  - 50
+  - 3
+  - 18
+  - 16
+  - 68
+  - 49
+  - 0
+  - 50
+  - 9
+  - 18
+  - 68
+  - 40
+  - 100
+  - 54
+  - 48
+  - 0
+  - 18
+  - 68
+  - 54
+  - 28
+  - 1
+  - 41
+  - 100
+  - 18
+  - 68
+  - 177
+  - 36
+  - 178
+  - 16
+  - 54
+  - 28
+  - 1
+  - 178
+  - 20
+  - 129
+  - 192
+  - 209
+  - 225
+  - 35
+  - 178
+  - 18
+  - 54
+  - 48
+  - 0
+  - 178
+  - 17
+  - 179
+  - 35
+  - 67
+  - 49
+  - 32
+  - 50
+  - 3
+  - 18
+  - 49
+  - 9
+  - 50
+  - 3
+  - 18
+  - 16
+  - 49
+  - 21
+  - 50
+  - 3
+  - 18
+  - 16
+  - 68
+  - 49
+  - 0
+  - 50
+  - 9
+  - 18
+  - 68
+  - 40
+  - 100
+  - 34
+  - 18
+  - 68
+  - 177
+  - 129
+  - 3
+  - 178
+  - 16
+  - 129
+  - 128
+  - 194
+  - 215
+  - 47
+  - 178
+  - 34
+  - 34
+  - 178
+  - 35
+  - 128
+  - 3
+  - 86
+  - 65
+  - 67
+  - 178
+  - 37
+  - 128
+  - 6
+  - 86
+  - 65
+  - 67
+  - 111
+  - 105
+  - 110
+  - 178
+  - 38
+  - 179
+  - 40
+  - 180
+  - 60
+  - 103
+  - 35
+  - 67
+  - 34
+  - 67
+  - 34
+  - 67
+  - 35
+  - 67
+  - 34
+  - 67
+  - 49
+  - 32
+  - 50
+  - 3
+  - 18
+  - 49
+  - 9
+  - 50
+  - 3
+  - 18
+  - 16
+  - 49
+  - 21
+  - 50
+  - 3
+  - 18
+  - 16
+  - 68
+  - 35
+  - 67
+tealCode: "#pragma version 6\r
+
+  txn ApplicationID\r
+
+  int 0\r
+
+  ==\r
+
+  bnz main_l18\r
+
+  txn OnCompletion\r
+
+  int OptIn\r
+
+  ==\r
+
+  bnz main_l17\r
+
+  txn OnCompletion\r
+
+  int CloseOut\r
+
+  ==\r
+
+  bnz main_l16\r
+
+  txn OnCompletion\r
+
+  int UpdateApplication\r
+
+  ==\r
+
+  bnz main_l15\r
+
+  txn OnCompletion\r
+
+  int DeleteApplication\r
+
+  ==\r
+
+  bnz main_l14\r
+
+  txn OnCompletion\r
+
+  int NoOp\r
+
+  ==\r
+
+  bnz main_l7\r
+
+  err\r
+
+  main_l7:\r
+
+  txn RekeyTo\r
+
+  global ZeroAddress\r
+
+  ==\r
+
+  txn CloseRemainderTo\r
+
+  global ZeroAddress\r
+
+  ==\r
+
+  &&\r
+
+  txn AssetCloseTo\r
+
+  global ZeroAddress\r
+
+  ==\r
+
+  &&\r
+
+  assert\r
+
+  txna ApplicationArgs 0\r
+
+  byte \"createAsset\"\r
+
+  ==\r
+
+  bnz main_l13\r
+
+  txna ApplicationArgs 0\r
+
+  byte \"transferVesting\"\r
+
+  ==\r
+
+  bnz main_l12\r
+
+  txna ApplicationArgs 0\r
+
+  byte \"vestingAccount\"\r
+
+  ==\r
+
+  bnz main_l11\r
+
+  err\r
+
+  main_l11:\r
+
+  byte \"vestingAddr\"\r
+
+  txna Accounts 1\r
+
+  app_global_put\r
+
+  int 1\r
+
+  return\r
+
+  main_l12:\r
+
+  txn RekeyTo\r
+
+  global ZeroAddress\r
+
+  ==\r
+
+  txn CloseRemainderTo\r
+
+  global ZeroAddress\r
+
+  ==\r
+
+  &&\r
+
+  txn AssetCloseTo\r
+
+  global ZeroAddress\r
+
+  ==\r
+
+  &&\r
+
+  assert\r
+
+  txn Sender\r
+
+  global CreatorAddress\r
+
+  ==\r
+
+  assert\r
+
+  byte \"Id\"\r
+
+  app_global_get\r
+
+  txna Assets 0\r
+
+  ==\r
+
+  assert\r
+
+  txna Accounts 1\r
+
+  byte \"vestingAddr\"\r
+
+  app_global_get\r
+
+  ==\r
+
+  assert\r
+
+  itxn_begin\r
+
+  int axfer\r
+
+  itxn_field TypeEnum\r
+
+  txna Accounts 1\r
+
+  itxn_field AssetReceiver\r
+
+  int 75000000\r
+
+  itxn_field AssetAmount\r
+
+  txna Assets 0\r
+
+  itxn_field XferAsset\r
+
+  itxn_submit\r
+
+  int 1\r
+
+  return\r
+
+  main_l13:\r
+
+  txn RekeyTo\r
+
+  global ZeroAddress\r
+
+  ==\r
+
+  txn CloseRemainderTo\r
+
+  global ZeroAddress\r
+
+  ==\r
+
+  &&\r
+
+  txn AssetCloseTo\r
+
+  global ZeroAddress\r
+
+  ==\r
+
+  &&\r
+
+  assert\r
+
+  txn Sender\r
+
+  global CreatorAddress\r
+
+  ==\r
+
+  assert\r
+
+  byte \"Id\"\r
+
+  app_global_get\r
+
+  int 0\r
+
+  ==\r
+
+  assert\r
+
+  itxn_begin\r
+
+  int acfg\r
+
+  itxn_field TypeEnum\r
+
+  int 100000000\r
+
+  itxn_field ConfigAssetTotal\r
+
+  int 0\r
+
+  itxn_field ConfigAssetDecimals\r
+
+  byte \"VAC\"\r
+
+  itxn_field ConfigAssetUnitName\r
+
+  byte \"VACoin\"\r
+
+  itxn_field ConfigAssetName\r
+
+  itxn_submit\r
+
+  byte \"Id\"\r
+
+  itxn CreatedAssetID\r
+
+  app_global_put\r
+
+  int 1\r
+
+  return\r
+
+  main_l14:\r
+
+  int 0\r
+
+  return\r
+
+  main_l15:\r
+
+  int 0\r
+
+  return\r
+
+  main_l16:\r
+
+  int 1\r
+
+  return\r
+
+  main_l17:\r
+
+  int 0\r
+
+  return\r
+
+  main_l18:\r
+
+  txn RekeyTo\r
+
+  global ZeroAddress\r
+
+  ==\r
+
+  txn CloseRemainderTo\r
+
+  global ZeroAddress\r
+
+  ==\r
+
+  &&\r
+
+  txn AssetCloseTo\r
+
+  global ZeroAddress\r
+
+  ==\r
+
+  &&\r
+
+  assert\r
+
+  int 1\r
+
+  return\r\n"

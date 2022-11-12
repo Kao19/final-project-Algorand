@@ -1,0 +1,1870 @@
+filename: vesting_approval.py
+timestamp: 1668280443
+compiled: BiAGAAEEGNiKhg8MJhIXY29tcGFueV9yZXNlcnZlX2FkZHJlc3MHYXNzZXRJRBhwZXJjZW50YWdlQ29tcGFueVJlc2VydmUacGVyY2VudGFnZVByaXZhdGVJbnZlc3RvcnMOQ2xpZkFtb3VudFRlYW0OcGVyY2VudGFnZVRlYW0ScGVyY2VudGFnZUFkdmlzb3JzEGFkdmlzb3JzX2FkZHJlc3MMdGVhbV9hZGRyZXNzGHByaXZhdGVfaW52ZXN0b3JfYWRkcmVzcxhDbGlmQW1vdW50Q29tcGFueVJlc2VydmUXUmVtYWluaW5nQ29tcGFueVJlc2VydmUaQ2xpZkFtb3VudFByaXZhdGVJbnZlc3RvcnMZUmVtYWluaW5nUHJpdmF0ZUludmVzdG9ycw1SZW1haW5pbmdUZWFtEkNsaWZBbW91bnRBZHZpc29ycxFSZW1haW5pbmdBZHZpc29ycwtvcHRJblN0YXR1czEYIhJAATcxGSMSQAEuMRmBAhJAASQxGSQSQAEbMRmBBRJAARExGSISQAABADEgMgMSMQkyAxIQMRUyAxIQRDYaAIAFb3B0aW4SQACtNhoAgBN3aXRoZHJhd0Zyb21WZXN0aW5nEkAAAQAxIDIDEjEJMgMSEDEVMgMSEEQxACcHZBJAAFoxACcIZBJAADYxACcJZBJAABMxAChkEkAAAQAnCicLKogBGCNDMgc2GgEXIQQIDUAAAiJDJwwnDSuIAP9C/+QyBzYaARchBAgNQAACIkMnBCcOJwWIAORC/8kyBzYaARchBAgNQAACIkMnDycQJwaIAMlC/64xIDIDEjEJMgMSEDEVMgMSEEQnEWQiEkQ2MAApZBJEMQAyCRJEsSSyEDIKshQishI2MACyEbMnESNnI0MiQyJDI0MiQzEgMgMSMQkyAxIQMRUyAxIQRCk2GgAXZycINhwBZycHNhwCZycJNhwDZyg2HARnJwY2GgEXZys2GgIXZyo2GgMXZycFNhoEF2cnECJnJw0iZycOJwRkZycLImcnDycGZCEFCyUKZycMK2QhBQslCmcnBCcFZCEFCyUKZycKKmRnI0M1AjUBNQAxAChkE0AAkDEAKGQTQABEMQAoZBJBALUpZDYwABJENABkIhNENhoCFzQAZDQBZAgORLEkshAxALIUNhoCF7ISNjAAshGzNAA0AGQ2GgIXCWdCAHk0ADQBZDQCZCUKCGcpZDYwABJENhoCFzQAZA5EsSSyEDEAshQ2GgIXshI2MACyEbM0ADQAZDYaAhcJZzQBNABkZ0IANSlkNjAAEkQ2GgIXNABkDkSxJLIQMQCyFDYaAheyEjYwALIRszQANABkNhoCFwlnNAE0AGRniQ==
+compiledHash: 22ZPPOECIY2Z7C4NX6KK5NDJ7ZPJX44BM5C3C6M3E4J6C2K224OT2LK5PE
+srcHash: 594170745
+base64ToBytes:
+    - 6
+    - 32
+    - 6
+    - 0
+    - 1
+    - 4
+    - 24
+    - 216
+    - 138
+    - 134
+    - 15
+    - 12
+    - 38
+    - 18
+    - 23
+    - 99
+    - 111
+    - 109
+    - 112
+    - 97
+    - 110
+    - 121
+    - 95
+    - 114
+    - 101
+    - 115
+    - 101
+    - 114
+    - 118
+    - 101
+    - 95
+    - 97
+    - 100
+    - 100
+    - 114
+    - 101
+    - 115
+    - 115
+    - 7
+    - 97
+    - 115
+    - 115
+    - 101
+    - 116
+    - 73
+    - 68
+    - 24
+    - 112
+    - 101
+    - 114
+    - 99
+    - 101
+    - 110
+    - 116
+    - 97
+    - 103
+    - 101
+    - 67
+    - 111
+    - 109
+    - 112
+    - 97
+    - 110
+    - 121
+    - 82
+    - 101
+    - 115
+    - 101
+    - 114
+    - 118
+    - 101
+    - 26
+    - 112
+    - 101
+    - 114
+    - 99
+    - 101
+    - 110
+    - 116
+    - 97
+    - 103
+    - 101
+    - 80
+    - 114
+    - 105
+    - 118
+    - 97
+    - 116
+    - 101
+    - 73
+    - 110
+    - 118
+    - 101
+    - 115
+    - 116
+    - 111
+    - 114
+    - 115
+    - 14
+    - 67
+    - 108
+    - 105
+    - 102
+    - 65
+    - 109
+    - 111
+    - 117
+    - 110
+    - 116
+    - 84
+    - 101
+    - 97
+    - 109
+    - 14
+    - 112
+    - 101
+    - 114
+    - 99
+    - 101
+    - 110
+    - 116
+    - 97
+    - 103
+    - 101
+    - 84
+    - 101
+    - 97
+    - 109
+    - 18
+    - 112
+    - 101
+    - 114
+    - 99
+    - 101
+    - 110
+    - 116
+    - 97
+    - 103
+    - 101
+    - 65
+    - 100
+    - 118
+    - 105
+    - 115
+    - 111
+    - 114
+    - 115
+    - 16
+    - 97
+    - 100
+    - 118
+    - 105
+    - 115
+    - 111
+    - 114
+    - 115
+    - 95
+    - 97
+    - 100
+    - 100
+    - 114
+    - 101
+    - 115
+    - 115
+    - 12
+    - 116
+    - 101
+    - 97
+    - 109
+    - 95
+    - 97
+    - 100
+    - 100
+    - 114
+    - 101
+    - 115
+    - 115
+    - 24
+    - 112
+    - 114
+    - 105
+    - 118
+    - 97
+    - 116
+    - 101
+    - 95
+    - 105
+    - 110
+    - 118
+    - 101
+    - 115
+    - 116
+    - 111
+    - 114
+    - 95
+    - 97
+    - 100
+    - 100
+    - 114
+    - 101
+    - 115
+    - 115
+    - 24
+    - 67
+    - 108
+    - 105
+    - 102
+    - 65
+    - 109
+    - 111
+    - 117
+    - 110
+    - 116
+    - 67
+    - 111
+    - 109
+    - 112
+    - 97
+    - 110
+    - 121
+    - 82
+    - 101
+    - 115
+    - 101
+    - 114
+    - 118
+    - 101
+    - 23
+    - 82
+    - 101
+    - 109
+    - 97
+    - 105
+    - 110
+    - 105
+    - 110
+    - 103
+    - 67
+    - 111
+    - 109
+    - 112
+    - 97
+    - 110
+    - 121
+    - 82
+    - 101
+    - 115
+    - 101
+    - 114
+    - 118
+    - 101
+    - 26
+    - 67
+    - 108
+    - 105
+    - 102
+    - 65
+    - 109
+    - 111
+    - 117
+    - 110
+    - 116
+    - 80
+    - 114
+    - 105
+    - 118
+    - 97
+    - 116
+    - 101
+    - 73
+    - 110
+    - 118
+    - 101
+    - 115
+    - 116
+    - 111
+    - 114
+    - 115
+    - 25
+    - 82
+    - 101
+    - 109
+    - 97
+    - 105
+    - 110
+    - 105
+    - 110
+    - 103
+    - 80
+    - 114
+    - 105
+    - 118
+    - 97
+    - 116
+    - 101
+    - 73
+    - 110
+    - 118
+    - 101
+    - 115
+    - 116
+    - 111
+    - 114
+    - 115
+    - 13
+    - 82
+    - 101
+    - 109
+    - 97
+    - 105
+    - 110
+    - 105
+    - 110
+    - 103
+    - 84
+    - 101
+    - 97
+    - 109
+    - 18
+    - 67
+    - 108
+    - 105
+    - 102
+    - 65
+    - 109
+    - 111
+    - 117
+    - 110
+    - 116
+    - 65
+    - 100
+    - 118
+    - 105
+    - 115
+    - 111
+    - 114
+    - 115
+    - 17
+    - 82
+    - 101
+    - 109
+    - 97
+    - 105
+    - 110
+    - 105
+    - 110
+    - 103
+    - 65
+    - 100
+    - 118
+    - 105
+    - 115
+    - 111
+    - 114
+    - 115
+    - 11
+    - 111
+    - 112
+    - 116
+    - 73
+    - 110
+    - 83
+    - 116
+    - 97
+    - 116
+    - 117
+    - 115
+    - 49
+    - 24
+    - 34
+    - 18
+    - 64
+    - 1
+    - 55
+    - 49
+    - 25
+    - 35
+    - 18
+    - 64
+    - 1
+    - 46
+    - 49
+    - 25
+    - 129
+    - 2
+    - 18
+    - 64
+    - 1
+    - 36
+    - 49
+    - 25
+    - 36
+    - 18
+    - 64
+    - 1
+    - 27
+    - 49
+    - 25
+    - 129
+    - 5
+    - 18
+    - 64
+    - 1
+    - 17
+    - 49
+    - 25
+    - 34
+    - 18
+    - 64
+    - 0
+    - 1
+    - 0
+    - 49
+    - 32
+    - 50
+    - 3
+    - 18
+    - 49
+    - 9
+    - 50
+    - 3
+    - 18
+    - 16
+    - 49
+    - 21
+    - 50
+    - 3
+    - 18
+    - 16
+    - 68
+    - 54
+    - 26
+    - 0
+    - 128
+    - 5
+    - 111
+    - 112
+    - 116
+    - 105
+    - 110
+    - 18
+    - 64
+    - 0
+    - 173
+    - 54
+    - 26
+    - 0
+    - 128
+    - 19
+    - 119
+    - 105
+    - 116
+    - 104
+    - 100
+    - 114
+    - 97
+    - 119
+    - 70
+    - 114
+    - 111
+    - 109
+    - 86
+    - 101
+    - 115
+    - 116
+    - 105
+    - 110
+    - 103
+    - 18
+    - 64
+    - 0
+    - 1
+    - 0
+    - 49
+    - 32
+    - 50
+    - 3
+    - 18
+    - 49
+    - 9
+    - 50
+    - 3
+    - 18
+    - 16
+    - 49
+    - 21
+    - 50
+    - 3
+    - 18
+    - 16
+    - 68
+    - 49
+    - 0
+    - 39
+    - 7
+    - 100
+    - 18
+    - 64
+    - 0
+    - 90
+    - 49
+    - 0
+    - 39
+    - 8
+    - 100
+    - 18
+    - 64
+    - 0
+    - 54
+    - 49
+    - 0
+    - 39
+    - 9
+    - 100
+    - 18
+    - 64
+    - 0
+    - 19
+    - 49
+    - 0
+    - 40
+    - 100
+    - 18
+    - 64
+    - 0
+    - 1
+    - 0
+    - 39
+    - 10
+    - 39
+    - 11
+    - 42
+    - 136
+    - 1
+    - 24
+    - 35
+    - 67
+    - 50
+    - 7
+    - 54
+    - 26
+    - 1
+    - 23
+    - 33
+    - 4
+    - 8
+    - 13
+    - 64
+    - 0
+    - 2
+    - 34
+    - 67
+    - 39
+    - 12
+    - 39
+    - 13
+    - 43
+    - 136
+    - 0
+    - 255
+    - 66
+    - 255
+    - 228
+    - 50
+    - 7
+    - 54
+    - 26
+    - 1
+    - 23
+    - 33
+    - 4
+    - 8
+    - 13
+    - 64
+    - 0
+    - 2
+    - 34
+    - 67
+    - 39
+    - 4
+    - 39
+    - 14
+    - 39
+    - 5
+    - 136
+    - 0
+    - 228
+    - 66
+    - 255
+    - 201
+    - 50
+    - 7
+    - 54
+    - 26
+    - 1
+    - 23
+    - 33
+    - 4
+    - 8
+    - 13
+    - 64
+    - 0
+    - 2
+    - 34
+    - 67
+    - 39
+    - 15
+    - 39
+    - 16
+    - 39
+    - 6
+    - 136
+    - 0
+    - 201
+    - 66
+    - 255
+    - 174
+    - 49
+    - 32
+    - 50
+    - 3
+    - 18
+    - 49
+    - 9
+    - 50
+    - 3
+    - 18
+    - 16
+    - 49
+    - 21
+    - 50
+    - 3
+    - 18
+    - 16
+    - 68
+    - 39
+    - 17
+    - 100
+    - 34
+    - 18
+    - 68
+    - 54
+    - 48
+    - 0
+    - 41
+    - 100
+    - 18
+    - 68
+    - 49
+    - 0
+    - 50
+    - 9
+    - 18
+    - 68
+    - 177
+    - 36
+    - 178
+    - 16
+    - 50
+    - 10
+    - 178
+    - 20
+    - 34
+    - 178
+    - 18
+    - 54
+    - 48
+    - 0
+    - 178
+    - 17
+    - 179
+    - 39
+    - 17
+    - 35
+    - 103
+    - 35
+    - 67
+    - 34
+    - 67
+    - 34
+    - 67
+    - 35
+    - 67
+    - 34
+    - 67
+    - 49
+    - 32
+    - 50
+    - 3
+    - 18
+    - 49
+    - 9
+    - 50
+    - 3
+    - 18
+    - 16
+    - 49
+    - 21
+    - 50
+    - 3
+    - 18
+    - 16
+    - 68
+    - 41
+    - 54
+    - 26
+    - 0
+    - 23
+    - 103
+    - 39
+    - 8
+    - 54
+    - 28
+    - 1
+    - 103
+    - 39
+    - 7
+    - 54
+    - 28
+    - 2
+    - 103
+    - 39
+    - 9
+    - 54
+    - 28
+    - 3
+    - 103
+    - 40
+    - 54
+    - 28
+    - 4
+    - 103
+    - 39
+    - 6
+    - 54
+    - 26
+    - 1
+    - 23
+    - 103
+    - 43
+    - 54
+    - 26
+    - 2
+    - 23
+    - 103
+    - 42
+    - 54
+    - 26
+    - 3
+    - 23
+    - 103
+    - 39
+    - 5
+    - 54
+    - 26
+    - 4
+    - 23
+    - 103
+    - 39
+    - 16
+    - 34
+    - 103
+    - 39
+    - 13
+    - 34
+    - 103
+    - 39
+    - 14
+    - 39
+    - 4
+    - 100
+    - 103
+    - 39
+    - 11
+    - 34
+    - 103
+    - 39
+    - 15
+    - 39
+    - 6
+    - 100
+    - 33
+    - 5
+    - 11
+    - 37
+    - 10
+    - 103
+    - 39
+    - 12
+    - 43
+    - 100
+    - 33
+    - 5
+    - 11
+    - 37
+    - 10
+    - 103
+    - 39
+    - 4
+    - 39
+    - 5
+    - 100
+    - 33
+    - 5
+    - 11
+    - 37
+    - 10
+    - 103
+    - 39
+    - 10
+    - 42
+    - 100
+    - 103
+    - 35
+    - 67
+    - 53
+    - 2
+    - 53
+    - 1
+    - 53
+    - 0
+    - 49
+    - 0
+    - 40
+    - 100
+    - 19
+    - 64
+    - 0
+    - 144
+    - 49
+    - 0
+    - 40
+    - 100
+    - 19
+    - 64
+    - 0
+    - 68
+    - 49
+    - 0
+    - 40
+    - 100
+    - 18
+    - 65
+    - 0
+    - 181
+    - 41
+    - 100
+    - 54
+    - 48
+    - 0
+    - 18
+    - 68
+    - 52
+    - 0
+    - 100
+    - 34
+    - 19
+    - 68
+    - 54
+    - 26
+    - 2
+    - 23
+    - 52
+    - 0
+    - 100
+    - 52
+    - 1
+    - 100
+    - 8
+    - 14
+    - 68
+    - 177
+    - 36
+    - 178
+    - 16
+    - 49
+    - 0
+    - 178
+    - 20
+    - 54
+    - 26
+    - 2
+    - 23
+    - 178
+    - 18
+    - 54
+    - 48
+    - 0
+    - 178
+    - 17
+    - 179
+    - 52
+    - 0
+    - 52
+    - 0
+    - 100
+    - 54
+    - 26
+    - 2
+    - 23
+    - 9
+    - 103
+    - 66
+    - 0
+    - 121
+    - 52
+    - 0
+    - 52
+    - 1
+    - 100
+    - 52
+    - 2
+    - 100
+    - 37
+    - 10
+    - 8
+    - 103
+    - 41
+    - 100
+    - 54
+    - 48
+    - 0
+    - 18
+    - 68
+    - 54
+    - 26
+    - 2
+    - 23
+    - 52
+    - 0
+    - 100
+    - 14
+    - 68
+    - 177
+    - 36
+    - 178
+    - 16
+    - 49
+    - 0
+    - 178
+    - 20
+    - 54
+    - 26
+    - 2
+    - 23
+    - 178
+    - 18
+    - 54
+    - 48
+    - 0
+    - 178
+    - 17
+    - 179
+    - 52
+    - 0
+    - 52
+    - 0
+    - 100
+    - 54
+    - 26
+    - 2
+    - 23
+    - 9
+    - 103
+    - 52
+    - 1
+    - 52
+    - 0
+    - 100
+    - 103
+    - 66
+    - 0
+    - 53
+    - 41
+    - 100
+    - 54
+    - 48
+    - 0
+    - 18
+    - 68
+    - 54
+    - 26
+    - 2
+    - 23
+    - 52
+    - 0
+    - 100
+    - 14
+    - 68
+    - 177
+    - 36
+    - 178
+    - 16
+    - 49
+    - 0
+    - 178
+    - 20
+    - 54
+    - 26
+    - 2
+    - 23
+    - 178
+    - 18
+    - 54
+    - 48
+    - 0
+    - 178
+    - 17
+    - 179
+    - 52
+    - 0
+    - 52
+    - 0
+    - 100
+    - 54
+    - 26
+    - 2
+    - 23
+    - 9
+    - 103
+    - 52
+    - 1
+    - 52
+    - 0
+    - 100
+    - 103
+    - 137
+tealCode: "#pragma version 6\r
+
+    txn ApplicationID\r
+
+    int 0\r
+
+    ==\r
+
+    bnz main_l31\r
+
+    txn OnCompletion\r
+
+    int OptIn\r
+
+    ==\r
+
+    bnz main_l30\r
+
+    txn OnCompletion\r
+
+    int CloseOut\r
+
+    ==\r
+
+    bnz main_l29\r
+
+    txn OnCompletion\r
+
+    int UpdateApplication\r
+
+    ==\r
+
+    bnz main_l28\r
+
+    txn OnCompletion\r
+
+    int DeleteApplication\r
+
+    ==\r
+
+    bnz main_l27\r
+
+    txn OnCompletion\r
+
+    int NoOp\r
+
+    ==\r
+
+    bnz main_l7\r
+
+    err\r
+
+    main_l7:\r
+
+    txn RekeyTo\r
+
+    global ZeroAddress\r
+
+    ==\r
+
+    txn CloseRemainderTo\r
+
+    global ZeroAddress\r
+
+    ==\r
+
+    &&\r
+
+    txn AssetCloseTo\r
+
+    global ZeroAddress\r
+
+    ==\r
+
+    &&\r
+
+    assert\r
+
+    txna ApplicationArgs 0\r
+
+    byte \"optin\"\r
+
+    ==\r
+
+    bnz main_l26\r
+
+    txna ApplicationArgs 0\r
+
+    byte \"withdrawFromVesting\"\r
+
+    ==\r
+
+    bnz main_l10\r
+
+    err\r
+
+    main_l10:\r
+
+    txn RekeyTo\r
+
+    global ZeroAddress\r
+
+    ==\r
+
+    txn CloseRemainderTo\r
+
+    global ZeroAddress\r
+
+    ==\r
+
+    &&\r
+
+    txn AssetCloseTo\r
+
+    global ZeroAddress\r
+
+    ==\r
+
+    &&\r
+
+    assert\r
+
+    txn Sender\r
+
+    byte \"advisors_address\"\r
+
+    app_global_get\r
+
+    ==\r
+
+    bnz main_l23\r
+
+    txn Sender\r
+
+    byte \"team_address\"\r
+
+    app_global_get\r
+
+    ==\r
+
+    bnz main_l20\r
+
+    txn Sender\r
+
+    byte \"private_investor_address\"\r
+
+    app_global_get\r
+
+    ==\r
+
+    bnz main_l17\r
+
+    txn Sender\r
+
+    byte \"company_reserve_address\"\r
+
+    app_global_get\r
+
+    ==\r
+
+    bnz main_l15\r
+
+    err\r
+
+    main_l15:\r
+
+    byte \"ClifAmountCompanyReserve\"\r
+
+    byte \"RemainingCompanyReserve\"\r
+
+    byte \"percentageCompanyReserve\"\r
+
+    callsub functionToWithdraw_0\r
+
+    main_l16:\r
+
+    int 1\r
+
+    return\r
+
+    main_l17:\r
+
+    global LatestTimestamp\r
+
+    txna ApplicationArgs 1\r
+
+    btoi\r
+
+    int 31556952\r
+
+    +\r
+
+    >\r
+
+    bnz main_l19\r
+
+    int 0\r
+
+    return\r
+
+    main_l19:\r
+
+    byte \"ClifAmountPrivateInvestors\"\r
+
+    byte \"RemainingPrivateInvestors\"\r
+
+    byte \"percentagePrivateInvestors\"\r
+
+    callsub functionToWithdraw_0\r
+
+    b main_l16\r
+
+    main_l20:\r
+
+    global LatestTimestamp\r
+
+    txna ApplicationArgs 1\r
+
+    btoi\r
+
+    int 31556952\r
+
+    +\r
+
+    >\r
+
+    bnz main_l22\r
+
+    int 0\r
+
+    return\r
+
+    main_l22:\r
+
+    byte \"ClifAmountTeam\"\r
+
+    byte \"RemainingTeam\"\r
+
+    byte \"percentageTeam\"\r
+
+    callsub functionToWithdraw_0\r
+
+    b main_l16\r
+
+    main_l23:\r
+
+    global LatestTimestamp\r
+
+    txna ApplicationArgs 1\r
+
+    btoi\r
+
+    int 31556952\r
+
+    +\r
+
+    >\r
+
+    bnz main_l25\r
+
+    int 0\r
+
+    return\r
+
+    main_l25:\r
+
+    byte \"ClifAmountAdvisors\"\r
+
+    byte \"RemainingAdvisors\"\r
+
+    byte \"percentageAdvisors\"\r
+
+    callsub functionToWithdraw_0\r
+
+    b main_l16\r
+
+    main_l26:\r
+
+    txn RekeyTo\r
+
+    global ZeroAddress\r
+
+    ==\r
+
+    txn CloseRemainderTo\r
+
+    global ZeroAddress\r
+
+    ==\r
+
+    &&\r
+
+    txn AssetCloseTo\r
+
+    global ZeroAddress\r
+
+    ==\r
+
+    &&\r
+
+    assert\r
+
+    byte \"optInStatus\"\r
+
+    app_global_get\r
+
+    int 0\r
+
+    ==\r
+
+    assert\r
+
+    txna Assets 0\r
+
+    byte \"assetID\"\r
+
+    app_global_get\r
+
+    ==\r
+
+    assert\r
+
+    txn Sender\r
+
+    global CreatorAddress\r
+
+    ==\r
+
+    assert\r
+
+    itxn_begin\r
+
+    int axfer\r
+
+    itxn_field TypeEnum\r
+
+    global CurrentApplicationAddress\r
+
+    itxn_field AssetReceiver\r
+
+    int 0\r
+
+    itxn_field AssetAmount\r
+
+    txna Assets 0\r
+
+    itxn_field XferAsset\r
+
+    itxn_submit\r
+
+    byte \"optInStatus\"\r
+
+    int 1\r
+
+    app_global_put\r
+
+    int 1\r
+
+    return\r
+
+    main_l27:\r
+
+    int 0\r
+
+    return\r
+
+    main_l28:\r
+
+    int 0\r
+
+    return\r
+
+    main_l29:\r
+
+    int 1\r
+
+    return\r
+
+    main_l30:\r
+
+    int 0\r
+
+    return\r
+
+    main_l31:\r
+
+    txn RekeyTo\r
+
+    global ZeroAddress\r
+
+    ==\r
+
+    txn CloseRemainderTo\r
+
+    global ZeroAddress\r
+
+    ==\r
+
+    &&\r
+
+    txn AssetCloseTo\r
+
+    global ZeroAddress\r
+
+    ==\r
+
+    &&\r
+
+    assert\r
+
+    byte \"assetID\"\r
+
+    txna ApplicationArgs 0\r
+
+    btoi\r
+
+    app_global_put\r
+
+    byte \"team_address\"\r
+
+    txna Accounts 1\r
+
+    app_global_put\r
+
+    byte \"advisors_address\"\r
+
+    txna Accounts 2\r
+
+    app_global_put\r
+
+    byte \"private_investor_address\"\r
+
+    txna Accounts 3\r
+
+    app_global_put\r
+
+    byte \"company_reserve_address\"\r
+
+    txna Accounts 4\r
+
+    app_global_put\r
+
+    byte \"percentageAdvisors\"\r
+
+    txna ApplicationArgs 1\r
+
+    btoi\r
+
+    app_global_put\r
+
+    byte \"percentagePrivateInvestors\"\r
+
+    txna ApplicationArgs 2\r
+
+    btoi\r
+
+    app_global_put\r
+
+    byte \"percentageCompanyReserve\"\r
+
+    txna ApplicationArgs 3\r
+
+    btoi\r
+
+    app_global_put\r
+
+    byte \"percentageTeam\"\r
+
+    txna ApplicationArgs 4\r
+
+    btoi\r
+
+    app_global_put\r
+
+    byte \"RemainingAdvisors\"\r
+
+    int 0\r
+
+    app_global_put\r
+
+    byte \"RemainingPrivateInvestors\"\r
+
+    int 0\r
+
+    app_global_put\r
+
+    byte \"RemainingTeam\"\r
+
+    byte \"ClifAmountTeam\"\r
+
+    app_global_get\r
+
+    app_global_put\r
+
+    byte \"RemainingCompanyReserve\"\r
+
+    int 0\r
+
+    app_global_put\r
+
+    byte \"ClifAmountAdvisors\"\r
+
+    byte \"percentageAdvisors\"\r
+
+    app_global_get\r
+
+    int 12\r
+
+    *\r
+
+    int 24\r
+
+    /\r
+
+    app_global_put\r
+
+    byte \"ClifAmountPrivateInvestors\"\r
+
+    byte \"percentagePrivateInvestors\"\r
+
+    app_global_get\r
+
+    int 12\r
+
+    *\r
+
+    int 24\r
+
+    /\r
+
+    app_global_put\r
+
+    byte \"ClifAmountTeam\"\r
+
+    byte \"percentageTeam\"\r
+
+    app_global_get\r
+
+    int 12\r
+
+    *\r
+
+    int 24\r
+
+    /\r
+
+    app_global_put\r
+
+    byte \"ClifAmountCompanyReserve\"\r
+
+    byte \"percentageCompanyReserve\"\r
+
+    app_global_get\r
+
+    app_global_put\r
+
+    int 1\r
+
+    return\r
+
+    \r
+
+    // functionToWithdraw\r
+
+    functionToWithdraw_0:\r
+
+    store 2\r
+
+    store 1\r
+
+    store 0\r
+
+    txn Sender\r
+
+    byte \"company_reserve_address\"\r
+
+    app_global_get\r
+
+    !=\r
+
+    bnz functionToWithdraw_0_l5\r
+
+    txn Sender\r
+
+    byte \"company_reserve_address\"\r
+
+    app_global_get\r
+
+    !=\r
+
+    bnz functionToWithdraw_0_l4\r
+
+    txn Sender\r
+
+    byte \"company_reserve_address\"\r
+
+    app_global_get\r
+
+    ==\r
+
+    bz functionToWithdraw_0_l6\r
+
+    byte \"assetID\"\r
+
+    app_global_get\r
+
+    txna Assets 0\r
+
+    ==\r
+
+    assert\r
+
+    load 0\r
+
+    app_global_get\r
+
+    int 0\r
+
+    !=\r
+
+    assert\r
+
+    txna ApplicationArgs 2\r
+
+    btoi\r
+
+    load 0\r
+
+    app_global_get\r
+
+    load 1\r
+
+    app_global_get\r
+
+    +\r
+
+    <=\r
+
+    assert\r
+
+    itxn_begin\r
+
+    int axfer\r
+
+    itxn_field TypeEnum\r
+
+    txn Sender\r
+
+    itxn_field AssetReceiver\r
+
+    txna ApplicationArgs 2\r
+
+    btoi\r
+
+    itxn_field AssetAmount\r
+
+    txna Assets 0\r
+
+    itxn_field XferAsset\r
+
+    itxn_submit\r
+
+    load 0\r
+
+    load 0\r
+
+    app_global_get\r
+
+    txna ApplicationArgs 2\r
+
+    btoi\r
+
+    -\r
+
+    app_global_put\r
+
+    b functionToWithdraw_0_l6\r
+
+    functionToWithdraw_0_l4:\r
+
+    load 0\r
+
+    load 1\r
+
+    app_global_get\r
+
+    load 2\r
+
+    app_global_get\r
+
+    int 24\r
+
+    /\r
+
+    +\r
+
+    app_global_put\r
+
+    byte \"assetID\"\r
+
+    app_global_get\r
+
+    txna Assets 0\r
+
+    ==\r
+
+    assert\r
+
+    txna ApplicationArgs 2\r
+
+    btoi\r
+
+    load 0\r
+
+    app_global_get\r
+
+    <=\r
+
+    assert\r
+
+    itxn_begin\r
+
+    int axfer\r
+
+    itxn_field TypeEnum\r
+
+    txn Sender\r
+
+    itxn_field AssetReceiver\r
+
+    txna ApplicationArgs 2\r
+
+    btoi\r
+
+    itxn_field AssetAmount\r
+
+    txna Assets 0\r
+
+    itxn_field XferAsset\r
+
+    itxn_submit\r
+
+    load 0\r
+
+    load 0\r
+
+    app_global_get\r
+
+    txna ApplicationArgs 2\r
+
+    btoi\r
+
+    -\r
+
+    app_global_put\r
+
+    load 1\r
+
+    load 0\r
+
+    app_global_get\r
+
+    app_global_put\r
+
+    b functionToWithdraw_0_l6\r
+
+    functionToWithdraw_0_l5:\r
+
+    byte \"assetID\"\r
+
+    app_global_get\r
+
+    txna Assets 0\r
+
+    ==\r
+
+    assert\r
+
+    txna ApplicationArgs 2\r
+
+    btoi\r
+
+    load 0\r
+
+    app_global_get\r
+
+    <=\r
+
+    assert\r
+
+    itxn_begin\r
+
+    int axfer\r
+
+    itxn_field TypeEnum\r
+
+    txn Sender\r
+
+    itxn_field AssetReceiver\r
+
+    txna ApplicationArgs 2\r
+
+    btoi\r
+
+    itxn_field AssetAmount\r
+
+    txna Assets 0\r
+
+    itxn_field XferAsset\r
+
+    itxn_submit\r
+
+    load 0\r
+
+    load 0\r
+
+    app_global_get\r
+
+    txna ApplicationArgs 2\r
+
+    btoi\r
+
+    -\r
+
+    app_global_put\r
+
+    load 1\r
+
+    load 0\r
+
+    app_global_get\r
+
+    app_global_put\r
+
+    functionToWithdraw_0_l6:\r
+
+    retsub\r\n"
