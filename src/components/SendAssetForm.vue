@@ -59,7 +59,7 @@ export default {
         };
     },
     created(){
-        this.algodClient = getAlgodClient("Localhost");
+        this.algodClient = getAlgodClient(this.network);
         const VestingApp = config.default.metadata;
         this.vestingAppAddress = VestingApp.VestingAppAddress;
         this.vestingAppId = VestingApp.VestingAppId;
@@ -122,6 +122,7 @@ export default {
                 }
             }
 
+
             //for user to pay fees
             let feePaymentTxn = algosdk.makePaymentTxnWithSuggestedParams(
                 this.sender, 
@@ -132,7 +133,7 @@ export default {
                 params,
             );
 
-            await wallets.sendAlgoSignerTransaction(feePaymentTxn, this.algodClient);
+
 
             let appArgs = [new Uint8Array(Buffer.from("withdrawFromVesting")), algosdk.encodeUint64(Number(this.vestingTimeStamp)), algosdk.encodeUint64(Number(this.asset_amount))];
 
@@ -148,14 +149,21 @@ export default {
             
             
 
-            const txnID = await wallets.sendAlgoSignerTransaction(withdaw, this.algodClient);
+            // Store txns
+            let txns = [feePaymentTxn, withdaw];
+
+            // Assign group ID
+            algosdk.assignGroupID(txns);
+
+            const txnID = await wallets.sendAlgoSignerGTransaction(txns, this.algodClient);
             
             if(txnID) {
                 this.updateTxn(txnID.txId);
             }
             else{
-                this.$alert("oops! you still can't withdraw!"); // make sure vue-simple-alert is installed
+                this.$alert("something went wrong with your transaction!"); // make sure vue-simple-alert is installed
             }
+        
 
             
         },

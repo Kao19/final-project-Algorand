@@ -21,7 +21,7 @@ def vesting_approval():
     handle_creation = Seq([
         Assert(basic_checks),
         App.globalPut(Bytes("assetID"), assetID),
-
+        
         App.globalPut(Bytes("team_address"), Txn.accounts[1]),
         App.globalPut(Bytes("advisors_address"), Txn.accounts[2]),
         App.globalPut(Bytes("private_investor_address"), Txn.accounts[3]),
@@ -32,19 +32,19 @@ def vesting_approval():
         App.globalPut(Bytes("percentageCompanyReserve"), percentageCompanyReserve),
         App.globalPut(Bytes("percentageTeam"), percentageTeam),
 
-        App.globalPut(Bytes("RemainingAdvisors"), Int(0)),
-        App.globalPut(Bytes("RemainingPrivateInvestors"), Int(0)),
-        App.globalPut(Bytes("RemainingTeam"), App.globalGet(Bytes("ClifAmountTeam"))),
-        App.globalPut(Bytes("RemainingCompanyReserve"), Int(0)),
 
-        App.globalPut(Bytes("ClifAmountAdvisors"),App.globalGet(Bytes("percentageAdvisors"))*Int(12)/Int(24)),
-        App.globalPut(Bytes("ClifAmountPrivateInvestors"),App.globalGet(Bytes("percentagePrivateInvestors"))*Int(12)/Int(24)),
-        App.globalPut(Bytes("ClifAmountTeam"),App.globalGet(Bytes("percentageTeam"))*Int(12)/Int(24)),
-        App.globalPut(Bytes("ClifAmountCompanyReserve"),App.globalGet(Bytes("percentageCompanyReserve"))),
+        App.globalPut(Bytes("ClifAmountAdvisors"),Int(0)),
+        App.globalPut(Bytes("ClifAmountPrivateInvestors"),Int(0)),
+        App.globalPut(Bytes("ClifAmountTeam"),Int(0)),
+        App.globalPut(Bytes("ClifAmountCompanyReserve"),Int(0)),
 
         Return(Int(1))
     ])
 
+    initTime = Seq(
+        App.globalPut(Bytes("initialTime"), Btoi(Txn.application_args[1])),
+        Return(Int(1))
+    )
 
     # opting in to receive the asset
     optin=Seq([
@@ -65,78 +65,56 @@ def vesting_approval():
     ])
 
 
-    initialTime = Btoi(Txn.application_args[1]) #the time when the contract is deployed (i used it as a reference to see how many months have already passed)
-    amount = Btoi(Txn.application_args[2])
+    year = Int(31556952) # 1 year
+    month = Int(2629800) # 1 month    
+    initialTime = App.globalGet(Bytes("initialTime"))
+    amount = Btoi(Gtxn[1].application_args[1])
+    
 
-
-    # everytime this function is called, i verify the current time with an amount of time to see which month after clif is that (example: 2629800 means a month in seconds)
     @Subroutine(TealType.none)
-    def functionToWithdraw(clif,remaining,percentage):
-        return If( Global.latest_timestamp() >= Int(2629800) and Global.latest_timestamp() < Int(5259600) and Txn.sender() != App.globalGet(Bytes("company_reserve_address"))).Then(Seq([
-            Assert(App.globalGet(Bytes("assetID")) == Txn.assets[0]),
-            Assert(amount <= App.globalGet(clif)),
+    def signTransaction(clif,withdrawable):
+        return Seq([ 
+            Assert(App.globalGet(Bytes("assetID")) == Gtxn[1].assets[0]),
+            Assert(Global.group_size() == Int(2)),
+            Assert(Gtxn[0].type_enum() == TxnType.Payment),
+            Assert(Gtxn[1].type_enum() == TxnType.ApplicationCall),
+            Assert(amount <= withdrawable),
+            Assert(amount > Int(0)),
             InnerTxnBuilder.Begin(),
             InnerTxnBuilder.SetFields({
             TxnField.type_enum: TxnType.AssetTransfer,
-            TxnField.asset_receiver: Txn.sender(),
+            TxnField.asset_receiver: Gtxn[1].sender(),
             TxnField.asset_amount: amount,
-            TxnField.xfer_asset: Txn.assets[0], # Must be in the assets array sent as part of the application call
+            TxnField.xfer_asset: Gtxn[1].assets[0], # Must be in the assets array sent as part of the application call
             }),
             InnerTxnBuilder.Submit(),
-            App.globalPut(clif,App.globalGet(clif)-amount),
-            App.globalPut(remaining,App.globalGet(clif)),
-            
-        ])).ElseIf( Global.latest_timestamp() >= initialTime + Int(5259600) and Global.latest_timestamp() <= initialTime + Int(63113904) and Txn.sender() != App.globalGet(Bytes("company_reserve_address"))).Then(
-            Seq([
-                App.globalPut(clif,App.globalGet(remaining)+(App.globalGet(percentage)/Int(24))),
-                Assert(App.globalGet(Bytes("assetID")) == Txn.assets[0]),
-                Assert(amount <= App.globalGet(clif)),
-                InnerTxnBuilder.Begin(),
-                InnerTxnBuilder.SetFields({
-                TxnField.type_enum: TxnType.AssetTransfer,
-                TxnField.asset_receiver: Txn.sender(),
-                TxnField.asset_amount: amount,
-                TxnField.xfer_asset: Txn.assets[0], # Must be in the assets array sent as part of the application call
-                }),
-                InnerTxnBuilder.Submit(),
-
-                App.globalPut(clif,App.globalGet(clif)-amount),
-                App.globalPut(remaining,App.globalGet(clif)),
-
+            App.globalPut(clif,App.globalGet(clif)+amount),
             ])
-        ).ElseIf(Txn.sender() == App.globalGet(Bytes("company_reserve_address"))).Then(
-            Seq([
-                Assert(App.globalGet(Bytes("assetID")) == Txn.assets[0]),
-                Assert(App.globalGet(clif) != Int(0)),
-                Assert(amount <= App.globalGet(clif) + App.globalGet(remaining)),
-                InnerTxnBuilder.Begin(),
-                InnerTxnBuilder.SetFields({
-                TxnField.type_enum: TxnType.AssetTransfer,
-                TxnField.asset_receiver: Txn.sender(),
-                TxnField.asset_amount: amount,
-                TxnField.xfer_asset: Txn.assets[0], # Must be in the assets array sent as part of the application call
-                }),
-                InnerTxnBuilder.Submit(),
-                App.globalPut(clif,App.globalGet(clif)-amount),
-                
-            ])
-        )
 
-    
-    
+    @Subroutine(TealType.none)
+    def functionToWithdraw(clif,percentage,currentMonth):
+       return Seq([
+            If(currentMonth < Int(12)).Then(
+                Reject()
+            ).ElseIf(currentMonth > Int(24)).Then(
+                signTransaction(clif,App.globalGet(percentage)-App.globalGet(clif))
+            ).Else(
+                signTransaction(clif,(App.globalGet(percentage) * (currentMonth-Int(1)) / Int(24))-App.globalGet(clif))
+            )
+       ])
+
     withdrawFromVesting = Seq([
         Assert(basic_checks),
         Cond(
-            [Txn.sender() == App.globalGet(Bytes("advisors_address")), If(Global.latest_timestamp() > initialTime + Int(31556952),functionToWithdraw(Bytes("ClifAmountAdvisors"),Bytes("RemainingAdvisors"),Bytes("percentageAdvisors")),Return(Int(0)))],
-            [Txn.sender() == App.globalGet(Bytes("team_address")), If(Global.latest_timestamp() > initialTime + Int(31556952),functionToWithdraw(Bytes("ClifAmountTeam"),Bytes("RemainingTeam"),Bytes("percentageTeam")),Return(Int(0)))],
-            [Txn.sender() == App.globalGet(Bytes("private_investor_address")), If(Global.latest_timestamp() > initialTime + Int(31556952),functionToWithdraw(Bytes("ClifAmountPrivateInvestors"),Bytes("RemainingPrivateInvestors"),Bytes("percentagePrivateInvestors")),Return(Int(0)))],
-            [Txn.sender() == App.globalGet(Bytes("company_reserve_address")), functionToWithdraw(Bytes("ClifAmountCompanyReserve"),Bytes("RemainingCompanyReserve"),Bytes("percentageCompanyReserve"))],
-            
+            [Txn.sender() == App.globalGet(Bytes("advisors_address")), If(Global.latest_timestamp() > initialTime + year,functionToWithdraw(Bytes("ClifAmountAdvisors"),Bytes("percentageAdvisors"),(Global.latest_timestamp()-initialTime)/month),Return(Int(0)))],
+            [Txn.sender() == App.globalGet(Bytes("team_address")), If(Global.latest_timestamp() > initialTime + year,functionToWithdraw(Bytes("ClifAmountTeam"),Bytes("percentageTeam"),(Global.latest_timestamp()-initialTime)/month),Return(Int(0)))],
+            [Txn.sender() == App.globalGet(Bytes("private_investor_address")), If(Global.latest_timestamp() > initialTime + year,functionToWithdraw(Bytes("ClifAmountPrivateInvestors"),Bytes("percentagePrivateInvestors"),(Global.latest_timestamp()-initialTime)/month),Return(Int(0)))],
+            [Txn.sender() == App.globalGet(Bytes("company_reserve_address")), signTransaction(Bytes("ClifAmountCompanyReserve"),App.globalGet(Bytes("percentageCompanyReserve"))-App.globalGet(Bytes("ClifAmountCompanyReserve")))],
         ),
 
         Return(Int(1))
-    ])
-
+    ]) 
+   
 
     handle_optin = Seq([
         Return(Int(0))
@@ -147,6 +125,7 @@ def vesting_approval():
         Cond(
             [Txn.application_args[0] == Bytes("optin"), optin],
             [Txn.application_args[0] == Bytes("withdrawFromVesting"), withdrawFromVesting],
+            [Txn.application_args[0] == Bytes("initTime"), initTime],
         )
     )
     handle_closeout = Return(Int(1))

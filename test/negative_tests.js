@@ -11,7 +11,13 @@ const approvalFileVesting = "vesting_approval.py";
 const clearStateFileVesting = "vesting_clearstate.py";
 
 // Errors
-const RUNTIME_ERR1009 = 'RUNTIME_ERR1009: TEAL runtime encountered err opcode'; // rejected by logic
+const RUNTIME_ERR1009 = 'RUNTIME_ERR1009: TEAL runtime encountered err opcode'; 
+const RUNTIME_ERR1007= 'Teal code rejected by logic';
+
+let deployTime;
+const year = 31556952;
+const month = 2629800;
+const week = 604800;
 
 describe("Negative Tests", function () {
     
@@ -45,8 +51,8 @@ describe("Negative Tests", function () {
             clearStateFileMint,
             0,
             0,
-            2,
-            2,
+            1,
+            1,
             [],
             []
         );
@@ -61,33 +67,17 @@ describe("Negative Tests", function () {
             clearStateFileVesting,
             0,
             0,
-            14,
+            16,
             4,
             [team.account.addr,advisors.account.addr,privateInvestors.account.addr,companyReserve.account.addr],
             [
                 convert.uint64ToBigEndian(ID),
-                convert.uint64ToBigEndian(25000000),
                 convert.uint64ToBigEndian(10000000),
                 convert.uint64ToBigEndian(20000000),
                 convert.uint64ToBigEndian(30000000),
-                convert.uint64ToBigEndian(15000000),
+                convert.uint64ToBigEndian(15000000)
             ]
         );
-    };
-    
-
-    const saveVestingAddr = (runtime, account, appID, VestingAppAdress) => {
-        const save  = ["vestingAccount"].map(convert.stringToBytes);
-        const accounts = [VestingAppAdress];
-        runtime.executeTx({
-            type: types.TransactionType.CallApp,
-            sign: types.SignType.SecretKey,
-            fromAccount: account,
-            appID: appID,
-            payFlags: { totalFee: 1000 },
-            accounts: accounts,
-            appArgs: save,
-        });
     };
 
 
@@ -111,47 +101,6 @@ describe("Negative Tests", function () {
 
         return assetID;
     };
-
-
-    let amountToWithdraw = 20000;
-    let now = Date.now();
-    const withdrawFromVesting= (runtime, account, appID, appAccount, assets) => {
-        const withdraw = [convert.stringToBytes("withdrawFromVesting"),convert.uint64ToBigEndian(now),convert.uint64ToBigEndian(amountToWithdraw)];
-        runtime.executeTx({
-                type: types.TransactionType.CallApp,
-                sign: types.SignType.SecretKey,
-                fromAccount: account,
-                appID: appID,
-                payFlags: { totalFee: 1000 },
-                accounts: [appAccount],
-                foreignAssets: [assets],
-                appArgs: withdraw,
-        });
-    };
-
-
-    it("vesting withdraw asset fails when called by public " , () => {
-        appInfoMint = initMint();
-        const ID = createdAsset(master.account);
-        const appInfoVesting = initVesting(ID);
-        
-        saveVestingAddr(runtime,
-            master.account,
-            appInfoMint.appID,
-            appInfoVesting.applicationAccount);
-
-        //do opt in
-        common.optInVesting(runtime, master.account, appInfoVesting.appID, ID);
-
-        console.log(now);
-        console.log(master.account.addr);
-        assert.throws(() => {withdrawFromVesting(runtime,master.account,appInfoMint.appID,appInfoVesting.applicationAccount,ID)}, RUNTIME_ERR1009);
-
-
-    }).timeout(20000);
-
-
-
     
     it("Transfer fails when called by non-creator" , () => {
         appInfoMint = initMint();
@@ -193,7 +142,7 @@ describe("Negative Tests", function () {
         const ID = createdAsset(master.account);
         const appInfoVesting = initVesting(ID);
         
-        saveVestingAddr(runtime,
+        common.saveVestingAddr(runtime,
             master.account,
             appInfoMint.appID,
             appInfoVesting.applicationAccount);
@@ -203,6 +152,200 @@ describe("Negative Tests", function () {
 
         //transfer asset to non vesting app (mint for example)
         assert.throws(() => { common.transferAsset(runtime,master.account,appInfoMint.appID,appInfoMint.applicationAccount,ID) }, RUNTIME_ERR1009);
+
+
+    }).timeout(20000);
+
+    it("Stakeholders cannot withdraw on month 12 and below " , () => {
+        appInfoMint = initMint();
+        const ID = createdAsset(master.account);
+        const appInfoVesting = initVesting(ID);
+        deployTime = appInfoVesting.timestamp;
+       
+        common.saveVestingAddr(runtime,
+            master.account,
+            appInfoMint.appID,
+            appInfoVesting.applicationAccount);
+
+        common.saveTimestamp(runtime,master,appInfoVesting.appID,deployTime);
+
+        //do opt in
+        common.optInVesting(runtime, master.account, appInfoVesting.appID, ID);
+        
+        //do transfer
+        common.transferAsset(runtime,master.account,appInfoMint.appID,appInfoVesting.applicationAccount,ID);
+
+        runtime.executeTx({
+            type: types.TransactionType.OptInASA,
+            sign: types.SignType.SecretKey,
+            fromAccount: privateInvestors.account,
+            assetID: ID,
+            payFlags: { totalFee: 1000 }
+            
+        })
+
+        
+        assert.throws(() => { common.withdrawFromVesting(runtime,privateInvestors.account,appInfoVesting.appID,appInfoVesting.applicationAccount,ID,20000000,privateInvestors.account,1000)}, RUNTIME_ERR1007);
+
+    }).timeout(20000);
+
+
+    it("Stakeholders cannot withdraw an amount exceeding their accumulated allocation for that month" , () => {
+        appInfoMint = initMint();
+        const ID = createdAsset(master.account);
+        const appInfoVesting = initVesting(ID);
+        deployTime = appInfoVesting.timestamp;
+       
+        common.saveVestingAddr(runtime,
+            master.account,
+            appInfoMint.appID,
+            appInfoVesting.applicationAccount);
+
+        common.saveTimestamp(runtime,master,appInfoVesting.appID,deployTime);
+
+        //do opt in
+        common.optInVesting(runtime, master.account, appInfoVesting.appID, ID);
+        
+        //do transfer
+        common.transferAsset(runtime,master.account,appInfoMint.appID,appInfoVesting.applicationAccount,ID);
+
+        runtime.executeTx({
+            type: types.TransactionType.OptInASA,
+            sign: types.SignType.SecretKey,
+            fromAccount: privateInvestors.account,
+            assetID: ID,
+            payFlags: { totalFee: 1000 }
+            
+        })
+
+        runtime.setRoundAndTimestamp(2, deployTime + year + week);
+        
+        assert.throws(() => { common.withdrawFromVesting(runtime,privateInvestors.account,appInfoVesting.appID,appInfoVesting.applicationAccount,ID,20000000,privateInvestors.account,1000)}, RUNTIME_ERR1009);
+
+    }).timeout(20000); 
+
+    
+    
+    it("Stakeholders cannot withdraw an amount exceeding their accumulated allocation for that month, if they have already withdrawn a partial amount" , () => {
+        appInfoMint = initMint();
+        const ID = createdAsset(master.account);
+        const appInfoVesting = initVesting(ID);
+        deployTime = appInfoVesting.timestamp;
+       
+        common.saveVestingAddr(runtime,
+            master.account,
+            appInfoMint.appID,
+            appInfoVesting.applicationAccount);
+
+        common.saveTimestamp(runtime,master,appInfoVesting.appID,deployTime);
+
+        //do opt in
+        common.optInVesting(runtime, master.account, appInfoVesting.appID, ID);
+        
+        //do transfer
+        common.transferAsset(runtime,master.account,appInfoMint.appID,appInfoVesting.applicationAccount,ID);
+
+        runtime.executeTx({
+            type: types.TransactionType.OptInASA,
+            sign: types.SignType.SecretKey,
+            fromAccount: privateInvestors.account,
+            assetID: ID,
+            payFlags: { totalFee: 1000 }
+            
+        })
+
+        runtime.setRoundAndTimestamp(2, deployTime + year + month + week);
+
+        common.withdrawFromVesting(runtime,privateInvestors.account,appInfoVesting.appID,appInfoVesting.applicationAccount,ID,300000,privateInvestors.account,1000);
+        
+        assert.throws(() => { common.withdrawFromVesting(runtime,privateInvestors.account,appInfoVesting.appID,appInfoVesting.applicationAccount,ID,10000000,privateInvestors.account,1000)}, RUNTIME_ERR1009);
+
+    }).timeout(20000); 
+
+    
+    
+    it("Stakeholders cannot withdraw 0 tokens " , () => {
+        appInfoMint = initMint();
+        const ID = createdAsset(master.account);
+        const appInfoVesting = initVesting(ID);
+        deployTime = appInfoVesting.timestamp;
+       
+        common.saveVestingAddr(runtime,
+            master.account,
+            appInfoMint.appID,
+            appInfoVesting.applicationAccount);
+
+        common.saveTimestamp(runtime,master,appInfoVesting.appID,deployTime);
+
+        //do opt in
+        common.optInVesting(runtime, master.account, appInfoVesting.appID, ID);
+        
+        //do transfer
+        common.transferAsset(runtime,master.account,appInfoMint.appID,appInfoVesting.applicationAccount,ID);
+
+        runtime.executeTx({
+            type: types.TransactionType.OptInASA,
+            sign: types.SignType.SecretKey,
+            fromAccount: companyReserve.account,
+            assetID: ID,
+            payFlags: { totalFee: 1000 }
+            
+        })
+
+        
+        assert.throws(() => { common.withdrawFromVesting(runtime,companyReserve.account,appInfoVesting.appID,appInfoVesting.applicationAccount,ID,0,privateInvestors.account,1000)}, RUNTIME_ERR1009);
+
+    }).timeout(20000);
+
+    
+    it("Withdraw fails if there is no payment to cover inner txn fees " , () => {
+        appInfoMint = initMint();
+        const ID = createdAsset(master.account);
+        const appInfoVesting = initVesting(ID);
+        deployTime = appInfoVesting.timestamp;
+       
+        common.saveVestingAddr(runtime,
+            master.account,
+            appInfoMint.appID,
+            appInfoVesting.applicationAccount);
+
+        common.saveTimestamp(runtime,master,appInfoVesting.appID,deployTime);
+
+        //do opt in
+        common.optInVesting(runtime, master.account, appInfoVesting.appID, ID);
+        
+        //do transfer
+        common.transferAsset(runtime,master.account,appInfoMint.appID,appInfoVesting.applicationAccount,ID);
+
+        runtime.executeTx({
+            type: types.TransactionType.OptInASA,
+            sign: types.SignType.SecretKey,
+            fromAccount: companyReserve.account,
+            assetID: ID,
+            payFlags: { totalFee: 1000 }
+            
+        })
+
+        
+        assert.throws(() => { common.withdrawFromVesting(runtime,companyReserve.account,appInfoVesting.appID,appInfoVesting.applicationAccount,ID,0,privateInvestors.account,0)}, RUNTIME_ERR1009);
+
+    }).timeout(20000);
+
+    
+    it("vesting withdraw asset fails when called by public " , () => {
+        appInfoMint = initMint();
+        const ID = createdAsset(master.account);
+        const appInfoVesting = initVesting(ID);
+        
+        common.saveVestingAddr(runtime,
+            master.account,
+            appInfoMint.appID,
+            appInfoVesting.applicationAccount);
+
+        //do opt in
+        common.optInVesting(runtime, master.account, appInfoVesting.appID, ID);
+
+        assert.throws(() => {common.withdrawFromVesting(runtime,privateInvestors.account,appInfoVesting.appID,appInfoVesting.applicationAccount,ID,20000000,privateInvestors.account,1000)}, RUNTIME_ERR1007);
 
 
     }).timeout(20000);

@@ -65,7 +65,7 @@ export default {
                 }
                 if(applicationInfoResponse1['params']['global-state'][i].key === window.btoa(clif)){
                     console.log("clif" , applicationInfoResponse1['params']['global-state'][i].value.uint);
-                    this.withdrawabale_amount = applicationInfoResponse1['params']['global-state'][i].value.uint;
+                    this.withdrawabale_amount = this.asset_per - applicationInfoResponse1['params']['global-state'][i].value.uint;
                     console.log("this: ",this.withdrawabale_amount);
                 }  
                    

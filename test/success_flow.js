@@ -11,6 +11,11 @@ const clearStateFileMint = "mint_clearstate.py";
 const approvalFileVesting = "vesting_approval.py";
 const clearStateFileVesting = "vesting_clearstate.py";
 
+let deployTime;
+const year = 31556952;
+const month = 2629800;
+const week = 604800;
+
 describe("Success Flow", function () {
     
     let master;
@@ -56,34 +61,19 @@ describe("Success Flow", function () {
             clearStateFileVesting,
             0,
             0,
-            14,
+            16,
             4,
             [team.account.addr,advisors.account.addr,privateInvestors.account.addr,companyReserve.account.addr],
             [
                 convert.uint64ToBigEndian(ID),
-                convert.uint64ToBigEndian(25000000),
                 convert.uint64ToBigEndian(10000000),
                 convert.uint64ToBigEndian(20000000),
                 convert.uint64ToBigEndian(30000000),
-                convert.uint64ToBigEndian(15000000),
+                convert.uint64ToBigEndian(15000000)
             ]
         );
     };
     
-
-    const saveVestingAddr = (runtime, account, appID, VestingAppAdress) => {
-        const save  = ["vestingAccount"].map(convert.stringToBytes);
-        const accounts = [VestingAppAdress];
-        runtime.executeTx({
-            type: types.TransactionType.CallApp,
-            sign: types.SignType.SecretKey,
-            fromAccount: account,
-            appID: appID,
-            payFlags: { totalFee: 1000 },
-            accounts: accounts,
-            appArgs: save,
-        });
-    };
 
     const createdAsset = () => {
         const appID1 = appInfoMint.appID;
@@ -106,7 +96,6 @@ describe("Success Flow", function () {
         return assetID;
     };
 
-
     
     it("Deploys mint contract successfully", () => {
         const appInfo = initMint();
@@ -126,7 +115,6 @@ describe("Success Flow", function () {
         appInfoMint = initMint();
         const ID = createdAsset();
         
-        console.log(team.account.addr);
         const appInfo = initVesting(ID);
         const appID = appInfo.appID;
 
@@ -167,7 +155,7 @@ describe("Success Flow", function () {
         const ID = createdAsset();
         const appInfoVesting = initVesting(ID);
         
-        saveVestingAddr(runtime,
+        common.saveVestingAddr(runtime,
             master.account,
             appInfoMint.appID,
             appInfoVesting.applicationAccount);
@@ -183,6 +171,76 @@ describe("Success Flow", function () {
         assert.equal(Number(appAccount.assets.get(ID).amount),75000000);
 
     }).timeout(50000); 
+
+    it("Private investors can withdraw 50% on month 13 " , () => {
+        appInfoMint = initMint();
+        const ID = createdAsset(master.account);
+        const appInfoVesting = initVesting(ID);
+        deployTime = appInfoVesting.timestamp;
+       
+        common.saveVestingAddr(runtime,
+            master.account,
+            appInfoMint.appID,
+            appInfoVesting.applicationAccount);
+
+        common.saveTimestamp(runtime,master,appInfoVesting.appID,deployTime);
+
+        //do opt in
+        common.optInVesting(runtime, master.account, appInfoVesting.appID, ID);
+        
+        //do transfer
+        common.transferAsset(runtime,master.account,appInfoMint.appID,appInfoVesting.applicationAccount,ID);
+
+        runtime.executeTx({
+            type: types.TransactionType.OptInASA,
+            sign: types.SignType.SecretKey,
+            fromAccount: privateInvestors.account,
+            assetID: ID,
+            payFlags: { totalFee: 1000 }
+            
+        })
+
+        runtime.setRoundAndTimestamp(2, deployTime + year + month + week);
+
+        common.withdrawFromVesting(runtime,privateInvestors.account,appInfoVesting.appID,appInfoVesting.applicationAccount,ID,10000000,privateInvestors.account,1000);
+
+    }).timeout(20000);
+
+    it("Private investors can withdraw full amount on month 25 " , () => {
+        appInfoMint = initMint();
+        const ID = createdAsset(master.account);
+        const appInfoVesting = initVesting(ID);
+        
+        common.saveVestingAddr(runtime,
+            master.account,
+            appInfoMint.appID,
+            appInfoVesting.applicationAccount);
+
+            
+        common.saveTimestamp(runtime,master,appInfoVesting.appID,deployTime);
+
+        //do opt in
+        common.optInVesting(runtime, master.account, appInfoVesting.appID, ID);
+        
+        //do transfer
+        common.transferAsset(runtime,master.account,appInfoMint.appID,appInfoVesting.applicationAccount,ID);
+
+        runtime.executeTx({
+            type: types.TransactionType.OptInASA,
+            sign: types.SignType.SecretKey,
+            fromAccount: privateInvestors.account,
+            assetID: ID,
+            payFlags: { totalFee: 1000 }
+            
+        })
+
+        deployTime = appInfoVesting.timestamp;
+
+        runtime.setRoundAndTimestamp(2, deployTime + year + (13*month) + week);
+
+        common.withdrawFromVesting(runtime,privateInvestors.account,appInfoVesting.appID,appInfoVesting.applicationAccount,ID,20000000,privateInvestors.account,1000);
+
+    }).timeout(20000);
 
     
 

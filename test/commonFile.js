@@ -66,11 +66,63 @@ const transferAsset = (runtime, account, appID, appAccount, assets) => {
     });
 };
 
+const withdrawFromVesting = (runtime,acc, appID,appAccount, assets, amountToWithdraw,buyer,feeCharge) => {
+    const withdraw  = [convert.stringToBytes("withdrawFromVesting"),convert.uint64ToBigEndian(amountToWithdraw)];
+    runtime.executeTx(
+        [
+            {
+                type: types.TransactionType.TransferAlgo,
+                sign: types.SignType.SecretKey,
+                fromAccount: buyer,
+                toAccountAddr: appAccount,
+                amountMicroAlgos: feeCharge, //to cover fee
+                payFlags: { totalFee: 1000 },
+            },
+            {
+                type: types.TransactionType.CallApp,
+                sign: types.SignType.SecretKey,
+                fromAccount: acc,
+                appID: appID,
+                payFlags: { totalFee: 1000 },
+                foreignAssets: [assets],
+                appArgs: withdraw,
+        
+            }
+    ]);
+};
 
+const saveTimestamp = (runtime,acc, applID, tmstmp) => {
+    const initTime  = [convert.stringToBytes("initTime"),convert.uint64ToBigEndian(tmstmp)];
+    runtime.executeTx({
+        type: types.TransactionType.CallApp,
+        sign: types.SignType.SecretKey,
+        fromAccount: acc.account,
+        appID: applID,
+        payFlags: { totalFee: 1000 },
+        appArgs: initTime,
+    });
+};
+
+const saveVestingAddr = (runtime, account, appID, VestingAppAdress) => {
+    const save  = ["vestingAccount"].map(convert.stringToBytes);
+    const accounts = [VestingAppAdress];
+    runtime.executeTx({
+        type: types.TransactionType.CallApp,
+        sign: types.SignType.SecretKey,
+        fromAccount: account,
+        appID: appID,
+        payFlags: { totalFee: 1000 },
+        accounts: accounts,
+        appArgs: save,
+    });
+};
 
 
 module.exports = {
     initContract,
     optInVesting,
-    transferAsset
+    transferAsset,
+    withdrawFromVesting,
+    saveTimestamp,
+    saveVestingAddr
 }

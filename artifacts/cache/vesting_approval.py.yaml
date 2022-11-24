@@ -1,66 +1,50 @@
 filename: vesting_approval.py
-timestamp: 1668280443
-compiled: BiAGAAEEGNiKhg8MJhIXY29tcGFueV9yZXNlcnZlX2FkZHJlc3MHYXNzZXRJRBhwZXJjZW50YWdlQ29tcGFueVJlc2VydmUacGVyY2VudGFnZVByaXZhdGVJbnZlc3RvcnMOQ2xpZkFtb3VudFRlYW0OcGVyY2VudGFnZVRlYW0ScGVyY2VudGFnZUFkdmlzb3JzEGFkdmlzb3JzX2FkZHJlc3MMdGVhbV9hZGRyZXNzGHByaXZhdGVfaW52ZXN0b3JfYWRkcmVzcxhDbGlmQW1vdW50Q29tcGFueVJlc2VydmUXUmVtYWluaW5nQ29tcGFueVJlc2VydmUaQ2xpZkFtb3VudFByaXZhdGVJbnZlc3RvcnMZUmVtYWluaW5nUHJpdmF0ZUludmVzdG9ycw1SZW1haW5pbmdUZWFtEkNsaWZBbW91bnRBZHZpc29ycxFSZW1haW5pbmdBZHZpc29ycwtvcHRJblN0YXR1czEYIhJAATcxGSMSQAEuMRmBAhJAASQxGSQSQAEbMRmBBRJAARExGSISQAABADEgMgMSMQkyAxIQMRUyAxIQRDYaAIAFb3B0aW4SQACtNhoAgBN3aXRoZHJhd0Zyb21WZXN0aW5nEkAAAQAxIDIDEjEJMgMSEDEVMgMSEEQxACcHZBJAAFoxACcIZBJAADYxACcJZBJAABMxAChkEkAAAQAnCicLKogBGCNDMgc2GgEXIQQIDUAAAiJDJwwnDSuIAP9C/+QyBzYaARchBAgNQAACIkMnBCcOJwWIAORC/8kyBzYaARchBAgNQAACIkMnDycQJwaIAMlC/64xIDIDEjEJMgMSEDEVMgMSEEQnEWQiEkQ2MAApZBJEMQAyCRJEsSSyEDIKshQishI2MACyEbMnESNnI0MiQyJDI0MiQzEgMgMSMQkyAxIQMRUyAxIQRCk2GgAXZycINhwBZycHNhwCZycJNhwDZyg2HARnJwY2GgEXZys2GgIXZyo2GgMXZycFNhoEF2cnECJnJw0iZycOJwRkZycLImcnDycGZCEFCyUKZycMK2QhBQslCmcnBCcFZCEFCyUKZycKKmRnI0M1AjUBNQAxAChkE0AAkDEAKGQTQABEMQAoZBJBALUpZDYwABJENABkIhNENhoCFzQAZDQBZAgORLEkshAxALIUNhoCF7ISNjAAshGzNAA0AGQ2GgIXCWdCAHk0ADQBZDQCZCUKCGcpZDYwABJENhoCFzQAZA5EsSSyEDEAshQ2GgIXshI2MACyEbM0ADQAZDYaAhcJZzQBNABkZ0IANSlkNjAAEkQ2GgIXNABkDkSxJLIQMQCyFDYaAheyEjYwALIRszQANABkNhoCFwlnNAE0AGRniQ==
-compiledHash: 22ZPPOECIY2Z7C4NX6KK5NDJ7ZPJX44BM5C3C6M3E4J6C2K224OT2LK5PE
-srcHash: 594170745
+timestamp: 1669304682
+compiled: BiAHAAEE2IqGD6jBoAECGCYPC2luaXRpYWxUaW1lGENsaWZBbW91bnRDb21wYW55UmVzZXJ2ZQdhc3NldElEEGFkdmlzb3JzX2FkZHJlc3MMdGVhbV9hZGRyZXNzGHByaXZhdGVfaW52ZXN0b3JfYWRkcmVzcxdjb21wYW55X3Jlc2VydmVfYWRkcmVzcxhwZXJjZW50YWdlQ29tcGFueVJlc2VydmUaQ2xpZkFtb3VudFByaXZhdGVJbnZlc3RvcnMacGVyY2VudGFnZVByaXZhdGVJbnZlc3RvcnMOQ2xpZkFtb3VudFRlYW0OcGVyY2VudGFnZVRlYW0SQ2xpZkFtb3VudEFkdmlzb3JzEnBlcmNlbnRhZ2VBZHZpc29ycwtvcHRJblN0YXR1czEYIhJAAVwxGSMSQAFTMRkhBRJAAUkxGSQSQAFAMRmBBRJAATYxGSISQAABADEgMgMSMQkyAxIQMRUyAxIQRDYaAIAFb3B0aW4SQADSNhoAgBN3aXRoZHJhd0Zyb21WZXN0aW5nEkAAGjYaAIAIaW5pdFRpbWUSQAABACg2GgEXZyNDMSAyAxIxCTIDEhAxFTIDEhBEMQArZBJAAGQxACcEZBJAAD0xACcFZBJAABYxACcGZBJAAAEAKScHZClkCYgA/CNDMgcoZCUIDUAAAiJDJwgnCTIHKGQJIQQKiAEzQv/gMgcoZCUIDUAAAiJDJwonCzIHKGQJIQQKiAEVQv/CMgcoZCUIDUAAAiJDJwwnDTIHKGQJIQQKiAD3Qv+kMSAyAxIxCTIDEhAxFTIDEhBEJw5kIhJENjAAKmQSRDEAMgkSRLEkshAyCrIUIrISNjAAshGzJw4jZyNDIkMiQyNDIkMxIDIDEjEJMgMSEDEVMgMSEEQqNhoAF2cnBDYcAWcrNhwCZycFNhwDZycGNhwEZycNNhoBF2cnCTYaAhdnJwc2GgMXZycLNhoEF2cnDCJnJwgiZycKImcpImcjQzUBNQAqZDcBMAASRDIEIQUSRDMAECMSRDMBEIEGEkQ3ARoBFzQBDkQ3ARoBFyINRLEkshAzAQCyFDcBGgEXshI3ATAAshGzNAA0AGQ3ARoBFwhniTUENQM1AjQEgQwMQAAuNAQhBg1AABc0AjQDZDQEIwkLIQYKNAJkCYj/gkIAETQCNANkNAJkCYj/c0IAAiJDiQ==
+compiledHash: UHWOT4F3FWKT7P4L5DLHGMLKOM7T52XV3PSFQ36SELU3YLERE2X6ZTD3AA
+srcHash: 315134780
 base64ToBytes:
     - 6
     - 32
-    - 6
+    - 7
     - 0
     - 1
     - 4
-    - 24
     - 216
     - 138
     - 134
     - 15
-    - 12
-    - 38
-    - 18
-    - 23
-    - 99
-    - 111
-    - 109
-    - 112
-    - 97
-    - 110
-    - 121
-    - 95
-    - 114
-    - 101
-    - 115
-    - 101
-    - 114
-    - 118
-    - 101
-    - 95
-    - 97
-    - 100
-    - 100
-    - 114
-    - 101
-    - 115
-    - 115
-    - 7
-    - 97
-    - 115
-    - 115
-    - 101
-    - 116
-    - 73
-    - 68
+    - 168
+    - 193
+    - 160
+    - 1
+    - 2
     - 24
-    - 112
+    - 38
+    - 15
+    - 11
+    - 105
+    - 110
+    - 105
+    - 116
+    - 105
+    - 97
+    - 108
+    - 84
+    - 105
+    - 109
     - 101
-    - 114
-    - 99
-    - 101
+    - 24
+    - 67
+    - 108
+    - 105
+    - 102
+    - 65
+    - 109
+    - 111
+    - 117
     - 110
     - 116
-    - 97
-    - 103
-    - 101
     - 67
     - 111
     - 109
@@ -75,82 +59,14 @@ base64ToBytes:
     - 114
     - 118
     - 101
-    - 26
-    - 112
-    - 101
-    - 114
-    - 99
-    - 101
-    - 110
-    - 116
+    - 7
     - 97
-    - 103
+    - 115
+    - 115
     - 101
-    - 80
-    - 114
-    - 105
-    - 118
-    - 97
     - 116
-    - 101
     - 73
-    - 110
-    - 118
-    - 101
-    - 115
-    - 116
-    - 111
-    - 114
-    - 115
-    - 14
-    - 67
-    - 108
-    - 105
-    - 102
-    - 65
-    - 109
-    - 111
-    - 117
-    - 110
-    - 116
-    - 84
-    - 101
-    - 97
-    - 109
-    - 14
-    - 112
-    - 101
-    - 114
-    - 99
-    - 101
-    - 110
-    - 116
-    - 97
-    - 103
-    - 101
-    - 84
-    - 101
-    - 97
-    - 109
-    - 18
-    - 112
-    - 101
-    - 114
-    - 99
-    - 101
-    - 110
-    - 116
-    - 97
-    - 103
-    - 101
-    - 65
-    - 100
-    - 118
-    - 105
-    - 115
-    - 111
-    - 114
-    - 115
+    - 68
     - 16
     - 97
     - 100
@@ -206,41 +122,41 @@ base64ToBytes:
     - 101
     - 115
     - 115
-    - 24
-    - 67
-    - 108
-    - 105
-    - 102
-    - 65
-    - 109
-    - 111
-    - 117
-    - 110
-    - 116
-    - 67
+    - 23
+    - 99
     - 111
     - 109
     - 112
     - 97
     - 110
     - 121
-    - 82
+    - 95
+    - 114
     - 101
     - 115
     - 101
     - 114
     - 118
     - 101
-    - 23
-    - 82
-    - 101
-    - 109
+    - 95
     - 97
-    - 105
+    - 100
+    - 100
+    - 114
+    - 101
+    - 115
+    - 115
+    - 24
+    - 112
+    - 101
+    - 114
+    - 99
+    - 101
     - 110
-    - 105
-    - 110
+    - 116
+    - 97
     - 103
+    - 101
     - 67
     - 111
     - 109
@@ -282,16 +198,17 @@ base64ToBytes:
     - 111
     - 114
     - 115
-    - 25
-    - 82
+    - 26
+    - 112
     - 101
-    - 109
+    - 114
+    - 99
+    - 101
+    - 110
+    - 116
     - 97
-    - 105
-    - 110
-    - 105
-    - 110
     - 103
+    - 101
     - 80
     - 114
     - 105
@@ -308,16 +225,32 @@ base64ToBytes:
     - 111
     - 114
     - 115
-    - 13
-    - 82
-    - 101
+    - 14
+    - 67
+    - 108
+    - 105
+    - 102
+    - 65
     - 109
+    - 111
+    - 117
+    - 110
+    - 116
+    - 84
+    - 101
     - 97
-    - 105
+    - 109
+    - 14
+    - 112
+    - 101
+    - 114
+    - 99
+    - 101
     - 110
-    - 105
-    - 110
+    - 116
+    - 97
     - 103
+    - 101
     - 84
     - 101
     - 97
@@ -341,16 +274,17 @@ base64ToBytes:
     - 111
     - 114
     - 115
-    - 17
-    - 82
+    - 18
+    - 112
     - 101
-    - 109
+    - 114
+    - 99
+    - 101
+    - 110
+    - 116
     - 97
-    - 105
-    - 110
-    - 105
-    - 110
     - 103
+    - 101
     - 65
     - 100
     - 118
@@ -377,29 +311,29 @@ base64ToBytes:
     - 18
     - 64
     - 1
-    - 55
+    - 92
     - 49
     - 25
     - 35
     - 18
     - 64
     - 1
-    - 46
+    - 83
     - 49
     - 25
-    - 129
-    - 2
+    - 33
+    - 5
     - 18
     - 64
     - 1
-    - 36
+    - 73
     - 49
     - 25
     - 36
     - 18
     - 64
     - 1
-    - 27
+    - 64
     - 49
     - 25
     - 129
@@ -407,7 +341,7 @@ base64ToBytes:
     - 18
     - 64
     - 1
-    - 17
+    - 54
     - 49
     - 25
     - 34
@@ -447,7 +381,7 @@ base64ToBytes:
     - 18
     - 64
     - 0
-    - 173
+    - 210
     - 54
     - 26
     - 0
@@ -475,8 +409,33 @@ base64ToBytes:
     - 18
     - 64
     - 0
+    - 26
+    - 54
+    - 26
+    - 0
+    - 128
+    - 8
+    - 105
+    - 110
+    - 105
+    - 116
+    - 84
+    - 105
+    - 109
+    - 101
+    - 18
+    - 64
+    - 0
     - 1
     - 0
+    - 40
+    - 54
+    - 26
+    - 1
+    - 23
+    - 103
+    - 35
+    - 67
     - 49
     - 32
     - 50
@@ -497,58 +456,117 @@ base64ToBytes:
     - 68
     - 49
     - 0
+    - 43
+    - 100
+    - 18
+    - 64
+    - 0
+    - 100
+    - 49
+    - 0
+    - 39
+    - 4
+    - 100
+    - 18
+    - 64
+    - 0
+    - 61
+    - 49
+    - 0
+    - 39
+    - 5
+    - 100
+    - 18
+    - 64
+    - 0
+    - 22
+    - 49
+    - 0
+    - 39
+    - 6
+    - 100
+    - 18
+    - 64
+    - 0
+    - 1
+    - 0
+    - 41
     - 39
     - 7
     - 100
-    - 18
-    - 64
-    - 0
-    - 90
-    - 49
-    - 0
-    - 39
-    - 8
+    - 41
     - 100
-    - 18
-    - 64
-    - 0
-    - 54
-    - 49
-    - 0
-    - 39
     - 9
-    - 100
-    - 18
-    - 64
-    - 0
-    - 19
-    - 49
-    - 0
-    - 40
-    - 100
-    - 18
-    - 64
-    - 0
-    - 1
-    - 0
-    - 39
-    - 10
-    - 39
-    - 11
-    - 42
     - 136
-    - 1
-    - 24
+    - 0
+    - 252
     - 35
     - 67
     - 50
     - 7
-    - 54
-    - 26
-    - 1
-    - 23
+    - 40
+    - 100
+    - 37
+    - 8
+    - 13
+    - 64
+    - 0
+    - 2
+    - 34
+    - 67
+    - 39
+    - 8
+    - 39
+    - 9
+    - 50
+    - 7
+    - 40
+    - 100
+    - 9
     - 33
     - 4
+    - 10
+    - 136
+    - 1
+    - 51
+    - 66
+    - 255
+    - 224
+    - 50
+    - 7
+    - 40
+    - 100
+    - 37
+    - 8
+    - 13
+    - 64
+    - 0
+    - 2
+    - 34
+    - 67
+    - 39
+    - 10
+    - 39
+    - 11
+    - 50
+    - 7
+    - 40
+    - 100
+    - 9
+    - 33
+    - 4
+    - 10
+    - 136
+    - 1
+    - 21
+    - 66
+    - 255
+    - 194
+    - 50
+    - 7
+    - 40
+    - 100
+    - 37
     - 8
     - 13
     - 64
@@ -560,67 +578,20 @@ base64ToBytes:
     - 12
     - 39
     - 13
-    - 43
-    - 136
-    - 0
-    - 255
-    - 66
-    - 255
-    - 228
     - 50
     - 7
-    - 54
-    - 26
-    - 1
-    - 23
+    - 40
+    - 100
+    - 9
     - 33
     - 4
-    - 8
-    - 13
-    - 64
-    - 0
-    - 2
-    - 34
-    - 67
-    - 39
-    - 4
-    - 39
-    - 14
-    - 39
-    - 5
+    - 10
     - 136
     - 0
-    - 228
+    - 247
     - 66
     - 255
-    - 201
-    - 50
-    - 7
-    - 54
-    - 26
-    - 1
-    - 23
-    - 33
-    - 4
-    - 8
-    - 13
-    - 64
-    - 0
-    - 2
-    - 34
-    - 67
-    - 39
-    - 15
-    - 39
-    - 16
-    - 39
-    - 6
-    - 136
-    - 0
-    - 201
-    - 66
-    - 255
-    - 174
+    - 164
     - 49
     - 32
     - 50
@@ -640,7 +611,7 @@ base64ToBytes:
     - 16
     - 68
     - 39
-    - 17
+    - 14
     - 100
     - 34
     - 18
@@ -648,7 +619,7 @@ base64ToBytes:
     - 54
     - 48
     - 0
-    - 41
+    - 42
     - 100
     - 18
     - 68
@@ -676,7 +647,7 @@ base64ToBytes:
     - 17
     - 179
     - 39
-    - 17
+    - 14
     - 35
     - 103
     - 35
@@ -707,189 +678,146 @@ base64ToBytes:
     - 18
     - 16
     - 68
-    - 41
+    - 42
     - 54
     - 26
     - 0
     - 23
     - 103
     - 39
-    - 8
+    - 4
     - 54
     - 28
     - 1
     - 103
-    - 39
-    - 7
+    - 43
     - 54
     - 28
     - 2
+    - 103
+    - 39
+    - 5
+    - 54
+    - 28
+    - 3
+    - 103
+    - 39
+    - 6
+    - 54
+    - 28
+    - 4
+    - 103
+    - 39
+    - 13
+    - 54
+    - 26
+    - 1
+    - 23
     - 103
     - 39
     - 9
     - 54
-    - 28
-    - 3
-    - 103
-    - 40
-    - 54
-    - 28
-    - 4
-    - 103
-    - 39
-    - 6
-    - 54
-    - 26
-    - 1
-    - 23
-    - 103
-    - 43
-    - 54
     - 26
     - 2
     - 23
     - 103
-    - 42
+    - 39
+    - 7
     - 54
     - 26
     - 3
     - 23
     - 103
     - 39
-    - 5
+    - 11
     - 54
     - 26
     - 4
     - 23
-    - 103
-    - 39
-    - 16
-    - 34
-    - 103
-    - 39
-    - 13
-    - 34
-    - 103
-    - 39
-    - 14
-    - 39
-    - 4
-    - 100
-    - 103
-    - 39
-    - 11
-    - 34
-    - 103
-    - 39
-    - 15
-    - 39
-    - 6
-    - 100
-    - 33
-    - 5
-    - 11
-    - 37
-    - 10
     - 103
     - 39
     - 12
-    - 43
-    - 100
-    - 33
-    - 5
-    - 11
-    - 37
-    - 10
+    - 34
     - 103
     - 39
-    - 4
-    - 39
-    - 5
-    - 100
-    - 33
-    - 5
-    - 11
-    - 37
-    - 10
+    - 8
+    - 34
     - 103
     - 39
     - 10
-    - 42
-    - 100
+    - 34
+    - 103
+    - 41
+    - 34
     - 103
     - 35
     - 67
     - 53
-    - 2
-    - 53
     - 1
     - 53
     - 0
-    - 49
-    - 0
-    - 40
+    - 42
     - 100
-    - 19
-    - 64
-    - 0
-    - 144
-    - 49
-    - 0
-    - 40
-    - 100
-    - 19
-    - 64
-    - 0
-    - 68
-    - 49
-    - 0
-    - 40
-    - 100
-    - 18
-    - 65
-    - 0
-    - 181
-    - 41
-    - 100
-    - 54
+    - 55
+    - 1
     - 48
     - 0
     - 18
     - 68
-    - 52
+    - 50
+    - 4
+    - 33
+    - 5
+    - 18
+    - 68
+    - 51
     - 0
-    - 100
+    - 16
+    - 35
+    - 18
+    - 68
+    - 51
+    - 1
+    - 16
+    - 129
+    - 6
+    - 18
+    - 68
+    - 55
+    - 1
+    - 26
+    - 1
+    - 23
+    - 52
+    - 1
+    - 14
+    - 68
+    - 55
+    - 1
+    - 26
+    - 1
+    - 23
     - 34
-    - 19
-    - 68
-    - 54
-    - 26
-    - 2
-    - 23
-    - 52
-    - 0
-    - 100
-    - 52
-    - 1
-    - 100
-    - 8
-    - 14
+    - 13
     - 68
     - 177
     - 36
     - 178
     - 16
-    - 49
+    - 51
+    - 1
     - 0
     - 178
     - 20
-    - 54
+    - 55
+    - 1
     - 26
-    - 2
+    - 1
     - 23
     - 178
     - 18
-    - 54
+    - 55
+    - 1
     - 48
     - 0
     - 178
@@ -900,136 +828,76 @@ base64ToBytes:
     - 52
     - 0
     - 100
-    - 54
-    - 26
-    - 2
-    - 23
-    - 9
-    - 103
-    - 66
-    - 0
-    - 121
-    - 52
-    - 0
-    - 52
+    - 55
     - 1
-    - 100
-    - 52
-    - 2
-    - 100
-    - 37
-    - 10
+    - 26
+    - 1
+    - 23
     - 8
     - 103
-    - 41
-    - 100
-    - 54
-    - 48
-    - 0
-    - 18
-    - 68
-    - 54
-    - 26
-    - 2
-    - 23
-    - 52
-    - 0
-    - 100
-    - 14
-    - 68
-    - 177
-    - 36
-    - 178
-    - 16
-    - 49
-    - 0
-    - 178
-    - 20
-    - 54
-    - 26
-    - 2
-    - 23
-    - 178
-    - 18
-    - 54
-    - 48
-    - 0
-    - 178
-    - 17
-    - 179
-    - 52
-    - 0
-    - 52
-    - 0
-    - 100
-    - 54
-    - 26
-    - 2
-    - 23
-    - 9
-    - 103
-    - 52
-    - 1
-    - 52
-    - 0
-    - 100
-    - 103
-    - 66
-    - 0
+    - 137
     - 53
-    - 41
-    - 100
-    - 54
-    - 48
-    - 0
-    - 18
-    - 68
-    - 54
-    - 26
+    - 4
+    - 53
+    - 3
+    - 53
     - 2
+    - 52
+    - 4
+    - 129
+    - 12
+    - 12
+    - 64
+    - 0
+    - 46
+    - 52
+    - 4
+    - 33
+    - 6
+    - 13
+    - 64
+    - 0
     - 23
     - 52
-    - 0
-    - 100
-    - 14
-    - 68
-    - 177
-    - 36
-    - 178
-    - 16
-    - 49
-    - 0
-    - 178
-    - 20
-    - 54
-    - 26
     - 2
-    - 23
-    - 178
-    - 18
-    - 54
-    - 48
-    - 0
-    - 178
-    - 17
-    - 179
     - 52
-    - 0
-    - 52
-    - 0
+    - 3
     - 100
-    - 54
-    - 26
-    - 2
-    - 23
+    - 52
+    - 4
+    - 35
     - 9
-    - 103
+    - 11
+    - 33
+    - 6
+    - 10
     - 52
-    - 1
-    - 52
-    - 0
+    - 2
     - 100
-    - 103
+    - 9
+    - 136
+    - 255
+    - 130
+    - 66
+    - 0
+    - 17
+    - 52
+    - 2
+    - 52
+    - 3
+    - 100
+    - 52
+    - 2
+    - 100
+    - 9
+    - 136
+    - 255
+    - 115
+    - 66
+    - 0
+    - 2
+    - 34
+    - 67
     - 137
 tealCode: "#pragma version 6\r
 
@@ -1039,7 +907,7 @@ tealCode: "#pragma version 6\r
 
     ==\r
 
-    bnz main_l31\r
+    bnz main_l33\r
 
     txn OnCompletion\r
 
@@ -1047,7 +915,7 @@ tealCode: "#pragma version 6\r
 
     ==\r
 
-    bnz main_l30\r
+    bnz main_l32\r
 
     txn OnCompletion\r
 
@@ -1055,7 +923,7 @@ tealCode: "#pragma version 6\r
 
     ==\r
 
-    bnz main_l29\r
+    bnz main_l31\r
 
     txn OnCompletion\r
 
@@ -1063,7 +931,7 @@ tealCode: "#pragma version 6\r
 
     ==\r
 
-    bnz main_l28\r
+    bnz main_l30\r
 
     txn OnCompletion\r
 
@@ -1071,7 +939,7 @@ tealCode: "#pragma version 6\r
 
     ==\r
 
-    bnz main_l27\r
+    bnz main_l29\r
 
     txn OnCompletion\r
 
@@ -1115,7 +983,7 @@ tealCode: "#pragma version 6\r
 
     ==\r
 
-    bnz main_l26\r
+    bnz main_l28\r
 
     txna ApplicationArgs 0\r
 
@@ -1123,11 +991,33 @@ tealCode: "#pragma version 6\r
 
     ==\r
 
-    bnz main_l10\r
+    bnz main_l12\r
+
+    txna ApplicationArgs 0\r
+
+    byte \"initTime\"\r
+
+    ==\r
+
+    bnz main_l11\r
 
     err\r
 
-    main_l10:\r
+    main_l11:\r
+
+    byte \"initialTime\"\r
+
+    txna ApplicationArgs 1\r
+
+    btoi\r
+
+    app_global_put\r
+
+    int 1\r
+
+    return\r
+
+    main_l12:\r
 
     txn RekeyTo\r
 
@@ -1161,7 +1051,7 @@ tealCode: "#pragma version 6\r
 
     ==\r
 
-    bnz main_l23\r
+    bnz main_l25\r
 
     txn Sender\r
 
@@ -1171,7 +1061,7 @@ tealCode: "#pragma version 6\r
 
     ==\r
 
-    bnz main_l20\r
+    bnz main_l22\r
 
     txn Sender\r
 
@@ -1181,7 +1071,7 @@ tealCode: "#pragma version 6\r
 
     ==\r
 
-    bnz main_l17\r
+    bnz main_l19\r
 
     txn Sender\r
 
@@ -1191,33 +1081,39 @@ tealCode: "#pragma version 6\r
 
     ==\r
 
-    bnz main_l15\r
+    bnz main_l17\r
 
     err\r
 
-    main_l15:\r
+    main_l17:\r
 
     byte \"ClifAmountCompanyReserve\"\r
 
-    byte \"RemainingCompanyReserve\"\r
-
     byte \"percentageCompanyReserve\"\r
 
-    callsub functionToWithdraw_0\r
+    app_global_get\r
 
-    main_l16:\r
+    byte \"ClifAmountCompanyReserve\"\r
+
+    app_global_get\r
+
+    -\r
+
+    callsub signTransaction_0\r
+
+    main_l18:\r
 
     int 1\r
 
     return\r
 
-    main_l17:\r
+    main_l19:\r
 
     global LatestTimestamp\r
 
-    txna ApplicationArgs 1\r
+    byte \"initialTime\"\r
 
-    btoi\r
+    app_global_get\r
 
     int 31556952\r
 
@@ -1225,63 +1121,41 @@ tealCode: "#pragma version 6\r
 
     >\r
 
-    bnz main_l19\r
+    bnz main_l21\r
 
     int 0\r
 
     return\r
 
-    main_l19:\r
+    main_l21:\r
 
     byte \"ClifAmountPrivateInvestors\"\r
 
-    byte \"RemainingPrivateInvestors\"\r
-
     byte \"percentagePrivateInvestors\"\r
-
-    callsub functionToWithdraw_0\r
-
-    b main_l16\r
-
-    main_l20:\r
 
     global LatestTimestamp\r
 
-    txna ApplicationArgs 1\r
+    byte \"initialTime\"\r
 
-    btoi\r
+    app_global_get\r
 
-    int 31556952\r
+    -\r
 
-    +\r
+    int 2629800\r
 
-    >\r
+    /\r
 
-    bnz main_l22\r
+    callsub functionToWithdraw_1\r
 
-    int 0\r
-
-    return\r
+    b main_l18\r
 
     main_l22:\r
 
-    byte \"ClifAmountTeam\"\r
-
-    byte \"RemainingTeam\"\r
-
-    byte \"percentageTeam\"\r
-
-    callsub functionToWithdraw_0\r
-
-    b main_l16\r
-
-    main_l23:\r
-
     global LatestTimestamp\r
 
-    txna ApplicationArgs 1\r
+    byte \"initialTime\"\r
 
-    btoi\r
+    app_global_get\r
 
     int 31556952\r
 
@@ -1289,25 +1163,77 @@ tealCode: "#pragma version 6\r
 
     >\r
 
-    bnz main_l25\r
+    bnz main_l24\r
 
     int 0\r
 
     return\r
 
+    main_l24:\r
+
+    byte \"ClifAmountTeam\"\r
+
+    byte \"percentageTeam\"\r
+
+    global LatestTimestamp\r
+
+    byte \"initialTime\"\r
+
+    app_global_get\r
+
+    -\r
+
+    int 2629800\r
+
+    /\r
+
+    callsub functionToWithdraw_1\r
+
+    b main_l18\r
+
     main_l25:\r
+
+    global LatestTimestamp\r
+
+    byte \"initialTime\"\r
+
+    app_global_get\r
+
+    int 31556952\r
+
+    +\r
+
+    >\r
+
+    bnz main_l27\r
+
+    int 0\r
+
+    return\r
+
+    main_l27:\r
 
     byte \"ClifAmountAdvisors\"\r
 
-    byte \"RemainingAdvisors\"\r
-
     byte \"percentageAdvisors\"\r
 
-    callsub functionToWithdraw_0\r
+    global LatestTimestamp\r
 
-    b main_l16\r
+    byte \"initialTime\"\r
 
-    main_l26:\r
+    app_global_get\r
+
+    -\r
+
+    int 2629800\r
+
+    /\r
+
+    callsub functionToWithdraw_1\r
+
+    b main_l18\r
+
+    main_l28:\r
 
     txn RekeyTo\r
 
@@ -1391,21 +1317,9 @@ tealCode: "#pragma version 6\r
 
     return\r
 
-    main_l27:\r
-
-    int 0\r
-
-    return\r
-
-    main_l28:\r
-
-    int 0\r
-
-    return\r
-
     main_l29:\r
 
-    int 1\r
+    int 0\r
 
     return\r
 
@@ -1416,6 +1330,18 @@ tealCode: "#pragma version 6\r
     return\r
 
     main_l31:\r
+
+    int 1\r
+
+    return\r
+
+    main_l32:\r
+
+    int 0\r
+
+    return\r
+
+    main_l33:\r
 
     txn RekeyTo\r
 
@@ -1505,85 +1431,27 @@ tealCode: "#pragma version 6\r
 
     app_global_put\r
 
-    byte \"RemainingAdvisors\"\r
-
-    int 0\r
-
-    app_global_put\r
-
-    byte \"RemainingPrivateInvestors\"\r
-
-    int 0\r
-
-    app_global_put\r
-
-    byte \"RemainingTeam\"\r
-
-    byte \"ClifAmountTeam\"\r
-
-    app_global_get\r
-
-    app_global_put\r
-
-    byte \"RemainingCompanyReserve\"\r
-
-    int 0\r
-
-    app_global_put\r
-
     byte \"ClifAmountAdvisors\"\r
 
-    byte \"percentageAdvisors\"\r
-
-    app_global_get\r
-
-    int 12\r
-
-    *\r
-
-    int 24\r
-
-    /\r
+    int 0\r
 
     app_global_put\r
 
     byte \"ClifAmountPrivateInvestors\"\r
 
-    byte \"percentagePrivateInvestors\"\r
-
-    app_global_get\r
-
-    int 12\r
-
-    *\r
-
-    int 24\r
-
-    /\r
+    int 0\r
 
     app_global_put\r
 
     byte \"ClifAmountTeam\"\r
 
-    byte \"percentageTeam\"\r
-
-    app_global_get\r
-
-    int 12\r
-
-    *\r
-
-    int 24\r
-
-    /\r
+    int 0\r
 
     app_global_put\r
 
     byte \"ClifAmountCompanyReserve\"\r
 
-    byte \"percentageCompanyReserve\"\r
-
-    app_global_get\r
+    int 0\r
 
     app_global_put\r
 
@@ -1593,81 +1461,65 @@ tealCode: "#pragma version 6\r
 
     \r
 
-    // functionToWithdraw\r
+    // signTransaction\r
 
-    functionToWithdraw_0:\r
-
-    store 2\r
+    signTransaction_0:\r
 
     store 1\r
 
     store 0\r
 
-    txn Sender\r
-
-    byte \"company_reserve_address\"\r
-
-    app_global_get\r
-
-    !=\r
-
-    bnz functionToWithdraw_0_l5\r
-
-    txn Sender\r
-
-    byte \"company_reserve_address\"\r
-
-    app_global_get\r
-
-    !=\r
-
-    bnz functionToWithdraw_0_l4\r
-
-    txn Sender\r
-
-    byte \"company_reserve_address\"\r
-
-    app_global_get\r
-
-    ==\r
-
-    bz functionToWithdraw_0_l6\r
-
     byte \"assetID\"\r
 
     app_global_get\r
 
-    txna Assets 0\r
+    gtxna 1 Assets 0\r
 
     ==\r
 
     assert\r
 
-    load 0\r
+    global GroupSize\r
 
-    app_global_get\r
+    int 2\r
 
-    int 0\r
-
-    !=\r
+    ==\r
 
     assert\r
 
-    txna ApplicationArgs 2\r
+    gtxn 0 TypeEnum\r
+
+    int pay\r
+
+    ==\r
+
+    assert\r
+
+    gtxn 1 TypeEnum\r
+
+    int appl\r
+
+    ==\r
+
+    assert\r
+
+    gtxna 1 ApplicationArgs 1\r
 
     btoi\r
 
-    load 0\r
-
-    app_global_get\r
-
     load 1\r
 
-    app_global_get\r
-
-    +\r
-
     <=\r
+
+    assert\r
+
+    gtxna 1 ApplicationArgs 1\r
+
+    btoi\r
+
+    int 0\r
+
+    >\r
 
     assert\r
 
@@ -1677,17 +1529,17 @@ tealCode: "#pragma version 6\r
 
     itxn_field TypeEnum\r
 
-    txn Sender\r
+    gtxn 1 Sender\r
 
     itxn_field AssetReceiver\r
 
-    txna ApplicationArgs 2\r
+    gtxna 1 ApplicationArgs 1\r
 
     btoi\r
 
     itxn_field AssetAmount\r
 
-    txna Assets 0\r
+    gtxna 1 Assets 0\r
 
     itxn_field XferAsset\r
 
@@ -1699,21 +1551,77 @@ tealCode: "#pragma version 6\r
 
     app_global_get\r
 
-    txna ApplicationArgs 2\r
+    gtxna 1 ApplicationArgs 1\r
 
     btoi\r
 
-    -\r
+    +\r
 
     app_global_put\r
 
-    b functionToWithdraw_0_l6\r
+    retsub\r
 
-    functionToWithdraw_0_l4:\r
+    \r
 
-    load 0\r
+    // functionToWithdraw\r
 
-    load 1\r
+    functionToWithdraw_1:\r
+
+    store 4\r
+
+    store 3\r
+
+    store 2\r
+
+    load 4\r
+
+    int 12\r
+
+    <\r
+
+    bnz functionToWithdraw_1_l4\r
+
+    load 4\r
+
+    int 24\r
+
+    >\r
+
+    bnz functionToWithdraw_1_l3\r
+
+    load 2\r
+
+    load 3\r
+
+    app_global_get\r
+
+    load 4\r
+
+    int 1\r
+
+    -\r
+
+    *\r
+
+    int 24\r
+
+    /\r
+
+    load 2\r
+
+    app_global_get\r
+
+    -\r
+
+    callsub signTransaction_0\r
+
+    b functionToWithdraw_1_l5\r
+
+    functionToWithdraw_1_l3:\r
+
+    load 2\r
+
+    load 3\r
 
     app_global_get\r
 
@@ -1721,150 +1629,18 @@ tealCode: "#pragma version 6\r
 
     app_global_get\r
 
-    int 24\r
-
-    /\r
-
-    +\r
-
-    app_global_put\r
-
-    byte \"assetID\"\r
-
-    app_global_get\r
-
-    txna Assets 0\r
-
-    ==\r
-
-    assert\r
-
-    txna ApplicationArgs 2\r
-
-    btoi\r
-
-    load 0\r
-
-    app_global_get\r
-
-    <=\r
-
-    assert\r
-
-    itxn_begin\r
-
-    int axfer\r
-
-    itxn_field TypeEnum\r
-
-    txn Sender\r
-
-    itxn_field AssetReceiver\r
-
-    txna ApplicationArgs 2\r
-
-    btoi\r
-
-    itxn_field AssetAmount\r
-
-    txna Assets 0\r
-
-    itxn_field XferAsset\r
-
-    itxn_submit\r
-
-    load 0\r
-
-    load 0\r
-
-    app_global_get\r
-
-    txna ApplicationArgs 2\r
-
-    btoi\r
-
     -\r
 
-    app_global_put\r
+    callsub signTransaction_0\r
 
-    load 1\r
+    b functionToWithdraw_1_l5\r
 
-    load 0\r
+    functionToWithdraw_1_l4:\r
 
-    app_global_get\r
+    int 0\r
 
-    app_global_put\r
+    return\r
 
-    b functionToWithdraw_0_l6\r
-
-    functionToWithdraw_0_l5:\r
-
-    byte \"assetID\"\r
-
-    app_global_get\r
-
-    txna Assets 0\r
-
-    ==\r
-
-    assert\r
-
-    txna ApplicationArgs 2\r
-
-    btoi\r
-
-    load 0\r
-
-    app_global_get\r
-
-    <=\r
-
-    assert\r
-
-    itxn_begin\r
-
-    int axfer\r
-
-    itxn_field TypeEnum\r
-
-    txn Sender\r
-
-    itxn_field AssetReceiver\r
-
-    txna ApplicationArgs 2\r
-
-    btoi\r
-
-    itxn_field AssetAmount\r
-
-    txna Assets 0\r
-
-    itxn_field XferAsset\r
-
-    itxn_submit\r
-
-    load 0\r
-
-    load 0\r
-
-    app_global_get\r
-
-    txna ApplicationArgs 2\r
-
-    btoi\r
-
-    -\r
-
-    app_global_put\r
-
-    load 1\r
-
-    load 0\r
-
-    app_global_get\r
-
-    app_global_put\r
-
-    functionToWithdraw_0_l6:\r
+    functionToWithdraw_1_l5:\r
 
     retsub\r\n"
