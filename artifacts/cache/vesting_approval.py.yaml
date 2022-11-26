@@ -1,19 +1,15 @@
 filename: vesting_approval.py
-timestamp: 1669304682
-compiled: BiAHAAEE2IqGD6jBoAECGCYPC2luaXRpYWxUaW1lGENsaWZBbW91bnRDb21wYW55UmVzZXJ2ZQdhc3NldElEEGFkdmlzb3JzX2FkZHJlc3MMdGVhbV9hZGRyZXNzGHByaXZhdGVfaW52ZXN0b3JfYWRkcmVzcxdjb21wYW55X3Jlc2VydmVfYWRkcmVzcxhwZXJjZW50YWdlQ29tcGFueVJlc2VydmUaQ2xpZkFtb3VudFByaXZhdGVJbnZlc3RvcnMacGVyY2VudGFnZVByaXZhdGVJbnZlc3RvcnMOQ2xpZkFtb3VudFRlYW0OcGVyY2VudGFnZVRlYW0SQ2xpZkFtb3VudEFkdmlzb3JzEnBlcmNlbnRhZ2VBZHZpc29ycwtvcHRJblN0YXR1czEYIhJAAVwxGSMSQAFTMRkhBRJAAUkxGSQSQAFAMRmBBRJAATYxGSISQAABADEgMgMSMQkyAxIQMRUyAxIQRDYaAIAFb3B0aW4SQADSNhoAgBN3aXRoZHJhd0Zyb21WZXN0aW5nEkAAGjYaAIAIaW5pdFRpbWUSQAABACg2GgEXZyNDMSAyAxIxCTIDEhAxFTIDEhBEMQArZBJAAGQxACcEZBJAAD0xACcFZBJAABYxACcGZBJAAAEAKScHZClkCYgA/CNDMgcoZCUIDUAAAiJDJwgnCTIHKGQJIQQKiAEzQv/gMgcoZCUIDUAAAiJDJwonCzIHKGQJIQQKiAEVQv/CMgcoZCUIDUAAAiJDJwwnDTIHKGQJIQQKiAD3Qv+kMSAyAxIxCTIDEhAxFTIDEhBEJw5kIhJENjAAKmQSRDEAMgkSRLEkshAyCrIUIrISNjAAshGzJw4jZyNDIkMiQyNDIkMxIDIDEjEJMgMSEDEVMgMSEEQqNhoAF2cnBDYcAWcrNhwCZycFNhwDZycGNhwEZycNNhoBF2cnCTYaAhdnJwc2GgMXZycLNhoEF2cnDCJnJwgiZycKImcpImcjQzUBNQAqZDcBMAASRDIEIQUSRDMAECMSRDMBEIEGEkQ3ARoBFzQBDkQ3ARoBFyINRLEkshAzAQCyFDcBGgEXshI3ATAAshGzNAA0AGQ3ARoBFwhniTUENQM1AjQEgQwMQAAuNAQhBg1AABc0AjQDZDQEIwkLIQYKNAJkCYj/gkIAETQCNANkNAJkCYj/c0IAAiJDiQ==
-compiledHash: UHWOT4F3FWKT7P4L5DLHGMLKOM7T52XV3PSFQ36SELU3YLERE2X6ZTD3AA
-srcHash: 315134780
+timestamp: 1669460380
+compiled: BiAGAAEEqMGgAQIYJg8LaW5pdGlhbFRpbWUHYXNzZXRJRBBhZHZpc29yc19hZGRyZXNzDHRlYW1fYWRkcmVzcxhwcml2YXRlX2ludmVzdG9yX2FkZHJlc3MXY29tcGFueV9yZXNlcnZlX2FkZHJlc3MdV2l0aGRyYXduQW1vdW50Q29tcGFueVJlc2VydmUYcGVyY2VudGFnZUNvbXBhbnlSZXNlcnZlH1dpdGhkcmF3bkFtb3VudFByaXZhdGVJbnZlc3RvcnMacGVyY2VudGFnZVByaXZhdGVJbnZlc3RvcnMTV2l0aGRyYXduQW1vdW50VGVhbQ5wZXJjZW50YWdlVGVhbRdXaXRoZHJhd25BbW91bnRBZHZpc29ycxJwZXJjZW50YWdlQWR2aXNvcnMLb3B0SW5TdGF0dXMxGCISQAFAMRkjEkABNzEZIQQSQAEtMRkkEkABJDEZgQUSQAEaMRkiEkAAAQAxIDIDEjEJMgMSEDEVMgMSEEQ2GgCABW9wdGluEkAAtjYaAIATd2l0aGRyYXdGcm9tVmVzdGluZxJAAAEAMSAyAxIxCTIDEhAxFTIDEhBEMQAqZBJAAG4xACtkEkAAVTEAJwRkEkAAOzEAJwVkEkAAAQAnBicHZIAjd2l0aGRyYXduQW1vdW50QW1vdW50Q29tcGFueVJlc2VydmVkCYgA2SNDJwgnCTIHKGQJJQqIASVC/+0nCicLMgcoZAklCogBFEL/3CcMJw0yByhkCSUKiAEDQv/LMSAyAxIxCTIDEhAxFTIDEhBEJw5kIhJENjAAKWQSRDEAMgkSRLEkshAyCrIUIrISNjAAshGzJw4jZyNDIkMiQyNDIkMxIDIDEjEJMgMSEDEVMgMSEEQpNhoAF2crNhwBZyo2HAJnJwQ2HANnJwU2HARnJw02GgEXZycJNhoCF2cnBzYaAxdnJws2GgQXZycMImcnCCJnJwoiZycGImcoMgdnI0M1ATUAKWQ3ATAAEkQyBCEEEkQzABAjEkQzARCBBhJENwEaARc0AQ5ENwEaARciDUQzAAiB6AcSRLEkshAzAQCyFDcBGgEXshI3ATAAshGzNAA0AGQ3ARoBFwhniTUENQM1AjQEgQ0MQAAuNAQhBQ1AABc0AjQDZDQEIwkLIQUKNAJkCYj/ekIAETQCNANkNAJkCYj/a0IAAiJDiQ==
+compiledHash: TWE36EJ2X2AUSZNCU2IBLYBPEOAWTVV3U633AWRCCRBYJ5364I7MDEAUJY
+srcHash: 2072668427
 base64ToBytes:
     - 6
     - 32
-    - 7
+    - 6
     - 0
     - 1
     - 4
-    - 216
-    - 138
-    - 134
-    - 15
     - 168
     - 193
     - 160
@@ -33,31 +29,6 @@ base64ToBytes:
     - 84
     - 105
     - 109
-    - 101
-    - 24
-    - 67
-    - 108
-    - 105
-    - 102
-    - 65
-    - 109
-    - 111
-    - 117
-    - 110
-    - 116
-    - 67
-    - 111
-    - 109
-    - 112
-    - 97
-    - 110
-    - 121
-    - 82
-    - 101
-    - 115
-    - 101
-    - 114
-    - 118
     - 101
     - 7
     - 97
@@ -146,6 +117,36 @@ base64ToBytes:
     - 101
     - 115
     - 115
+    - 29
+    - 87
+    - 105
+    - 116
+    - 104
+    - 100
+    - 114
+    - 97
+    - 119
+    - 110
+    - 65
+    - 109
+    - 111
+    - 117
+    - 110
+    - 116
+    - 67
+    - 111
+    - 109
+    - 112
+    - 97
+    - 110
+    - 121
+    - 82
+    - 101
+    - 115
+    - 101
+    - 114
+    - 118
+    - 101
     - 24
     - 112
     - 101
@@ -171,11 +172,16 @@ base64ToBytes:
     - 114
     - 118
     - 101
-    - 26
-    - 67
-    - 108
+    - 31
+    - 87
     - 105
-    - 102
+    - 116
+    - 104
+    - 100
+    - 114
+    - 97
+    - 119
+    - 110
     - 65
     - 109
     - 111
@@ -225,11 +231,16 @@ base64ToBytes:
     - 111
     - 114
     - 115
-    - 14
-    - 67
-    - 108
+    - 19
+    - 87
     - 105
-    - 102
+    - 116
+    - 104
+    - 100
+    - 114
+    - 97
+    - 119
+    - 110
     - 65
     - 109
     - 111
@@ -255,11 +266,16 @@ base64ToBytes:
     - 101
     - 97
     - 109
-    - 18
-    - 67
-    - 108
+    - 23
+    - 87
     - 105
-    - 102
+    - 116
+    - 104
+    - 100
+    - 114
+    - 97
+    - 119
+    - 110
     - 65
     - 109
     - 111
@@ -311,29 +327,29 @@ base64ToBytes:
     - 18
     - 64
     - 1
-    - 92
+    - 64
     - 49
     - 25
     - 35
     - 18
     - 64
     - 1
-    - 83
+    - 55
     - 49
     - 25
     - 33
-    - 5
+    - 4
     - 18
     - 64
     - 1
-    - 73
+    - 45
     - 49
     - 25
     - 36
     - 18
     - 64
     - 1
-    - 64
+    - 36
     - 49
     - 25
     - 129
@@ -341,7 +357,7 @@ base64ToBytes:
     - 18
     - 64
     - 1
-    - 54
+    - 26
     - 49
     - 25
     - 34
@@ -381,7 +397,7 @@ base64ToBytes:
     - 18
     - 64
     - 0
-    - 210
+    - 182
     - 54
     - 26
     - 0
@@ -409,33 +425,8 @@ base64ToBytes:
     - 18
     - 64
     - 0
-    - 26
-    - 54
-    - 26
-    - 0
-    - 128
-    - 8
-    - 105
-    - 110
-    - 105
-    - 116
-    - 84
-    - 105
-    - 109
-    - 101
-    - 18
-    - 64
-    - 0
     - 1
     - 0
-    - 40
-    - 54
-    - 26
-    - 1
-    - 23
-    - 103
-    - 35
-    - 67
     - 49
     - 32
     - 50
@@ -456,12 +447,20 @@ base64ToBytes:
     - 68
     - 49
     - 0
+    - 42
+    - 100
+    - 18
+    - 64
+    - 0
+    - 110
+    - 49
+    - 0
     - 43
     - 100
     - 18
     - 64
     - 0
-    - 100
+    - 85
     - 49
     - 0
     - 39
@@ -470,7 +469,7 @@ base64ToBytes:
     - 18
     - 64
     - 0
-    - 61
+    - 59
     - 49
     - 0
     - 39
@@ -479,71 +478,74 @@ base64ToBytes:
     - 18
     - 64
     - 0
-    - 22
-    - 49
+    - 1
     - 0
     - 39
     - 6
-    - 100
-    - 18
-    - 64
-    - 0
-    - 1
-    - 0
-    - 41
     - 39
     - 7
     - 100
-    - 41
+    - 128
+    - 35
+    - 119
+    - 105
+    - 116
+    - 104
+    - 100
+    - 114
+    - 97
+    - 119
+    - 110
+    - 65
+    - 109
+    - 111
+    - 117
+    - 110
+    - 116
+    - 65
+    - 109
+    - 111
+    - 117
+    - 110
+    - 116
+    - 67
+    - 111
+    - 109
+    - 112
+    - 97
+    - 110
+    - 121
+    - 82
+    - 101
+    - 115
+    - 101
+    - 114
+    - 118
+    - 101
     - 100
     - 9
     - 136
     - 0
-    - 252
+    - 217
     - 35
     - 67
+    - 39
+    - 8
+    - 39
+    - 9
     - 50
     - 7
     - 40
     - 100
+    - 9
     - 37
-    - 8
-    - 13
-    - 64
-    - 0
-    - 2
-    - 34
-    - 67
-    - 39
-    - 8
-    - 39
-    - 9
-    - 50
-    - 7
-    - 40
-    - 100
-    - 9
-    - 33
-    - 4
     - 10
     - 136
     - 1
-    - 51
+    - 37
     - 66
     - 255
-    - 224
-    - 50
-    - 7
-    - 40
-    - 100
-    - 37
-    - 8
-    - 13
-    - 64
-    - 0
-    - 2
-    - 34
-    - 67
+    - 237
     - 39
     - 10
     - 39
@@ -553,27 +555,14 @@ base64ToBytes:
     - 40
     - 100
     - 9
-    - 33
-    - 4
+    - 37
     - 10
     - 136
     - 1
-    - 21
+    - 20
     - 66
     - 255
-    - 194
-    - 50
-    - 7
-    - 40
-    - 100
-    - 37
-    - 8
-    - 13
-    - 64
-    - 0
-    - 2
-    - 34
-    - 67
+    - 220
     - 39
     - 12
     - 39
@@ -583,15 +572,14 @@ base64ToBytes:
     - 40
     - 100
     - 9
-    - 33
-    - 4
+    - 37
     - 10
     - 136
-    - 0
-    - 247
+    - 1
+    - 3
     - 66
     - 255
-    - 164
+    - 203
     - 49
     - 32
     - 50
@@ -619,7 +607,7 @@ base64ToBytes:
     - 54
     - 48
     - 0
-    - 42
+    - 41
     - 100
     - 18
     - 68
@@ -678,31 +666,30 @@ base64ToBytes:
     - 18
     - 16
     - 68
-    - 42
+    - 41
     - 54
     - 26
     - 0
     - 23
     - 103
-    - 39
-    - 4
+    - 43
     - 54
     - 28
     - 1
     - 103
-    - 43
+    - 42
     - 54
     - 28
     - 2
     - 103
     - 39
-    - 5
+    - 4
     - 54
     - 28
     - 3
     - 103
     - 39
-    - 6
+    - 5
     - 54
     - 28
     - 4
@@ -747,8 +734,13 @@ base64ToBytes:
     - 10
     - 34
     - 103
-    - 41
+    - 39
+    - 6
     - 34
+    - 103
+    - 40
+    - 50
+    - 7
     - 103
     - 35
     - 67
@@ -756,7 +748,7 @@ base64ToBytes:
     - 1
     - 53
     - 0
-    - 42
+    - 41
     - 100
     - 55
     - 1
@@ -767,7 +759,7 @@ base64ToBytes:
     - 50
     - 4
     - 33
-    - 5
+    - 4
     - 18
     - 68
     - 51
@@ -799,6 +791,14 @@ base64ToBytes:
     - 23
     - 34
     - 13
+    - 68
+    - 51
+    - 0
+    - 8
+    - 129
+    - 232
+    - 7
+    - 18
     - 68
     - 177
     - 36
@@ -845,7 +845,7 @@ base64ToBytes:
     - 52
     - 4
     - 129
-    - 12
+    - 13
     - 12
     - 64
     - 0
@@ -853,7 +853,7 @@ base64ToBytes:
     - 52
     - 4
     - 33
-    - 6
+    - 5
     - 13
     - 64
     - 0
@@ -869,7 +869,7 @@ base64ToBytes:
     - 9
     - 11
     - 33
-    - 6
+    - 5
     - 10
     - 52
     - 2
@@ -877,7 +877,7 @@ base64ToBytes:
     - 9
     - 136
     - 255
-    - 130
+    - 122
     - 66
     - 0
     - 17
@@ -892,7 +892,7 @@ base64ToBytes:
     - 9
     - 136
     - 255
-    - 115
+    - 107
     - 66
     - 0
     - 2
@@ -907,7 +907,7 @@ tealCode: "#pragma version 6\r
 
     ==\r
 
-    bnz main_l33\r
+    bnz main_l25\r
 
     txn OnCompletion\r
 
@@ -915,7 +915,7 @@ tealCode: "#pragma version 6\r
 
     ==\r
 
-    bnz main_l32\r
+    bnz main_l24\r
 
     txn OnCompletion\r
 
@@ -923,7 +923,7 @@ tealCode: "#pragma version 6\r
 
     ==\r
 
-    bnz main_l31\r
+    bnz main_l23\r
 
     txn OnCompletion\r
 
@@ -931,7 +931,7 @@ tealCode: "#pragma version 6\r
 
     ==\r
 
-    bnz main_l30\r
+    bnz main_l22\r
 
     txn OnCompletion\r
 
@@ -939,7 +939,7 @@ tealCode: "#pragma version 6\r
 
     ==\r
 
-    bnz main_l29\r
+    bnz main_l21\r
 
     txn OnCompletion\r
 
@@ -983,7 +983,7 @@ tealCode: "#pragma version 6\r
 
     ==\r
 
-    bnz main_l28\r
+    bnz main_l20\r
 
     txna ApplicationArgs 0\r
 
@@ -991,33 +991,11 @@ tealCode: "#pragma version 6\r
 
     ==\r
 
-    bnz main_l12\r
-
-    txna ApplicationArgs 0\r
-
-    byte \"initTime\"\r
-
-    ==\r
-
-    bnz main_l11\r
+    bnz main_l10\r
 
     err\r
 
-    main_l11:\r
-
-    byte \"initialTime\"\r
-
-    txna ApplicationArgs 1\r
-
-    btoi\r
-
-    app_global_put\r
-
-    int 1\r
-
-    return\r
-
-    main_l12:\r
+    main_l10:\r
 
     txn RekeyTo\r
 
@@ -1051,7 +1029,7 @@ tealCode: "#pragma version 6\r
 
     ==\r
 
-    bnz main_l25\r
+    bnz main_l19\r
 
     txn Sender\r
 
@@ -1061,7 +1039,7 @@ tealCode: "#pragma version 6\r
 
     ==\r
 
-    bnz main_l22\r
+    bnz main_l18\r
 
     txn Sender\r
 
@@ -1071,7 +1049,7 @@ tealCode: "#pragma version 6\r
 
     ==\r
 
-    bnz main_l19\r
+    bnz main_l17\r
 
     txn Sender\r
 
@@ -1081,19 +1059,19 @@ tealCode: "#pragma version 6\r
 
     ==\r
 
-    bnz main_l17\r
+    bnz main_l15\r
 
     err\r
 
-    main_l17:\r
+    main_l15:\r
 
-    byte \"ClifAmountCompanyReserve\"\r
+    byte \"WithdrawnAmountCompanyReserve\"\r
 
     byte \"percentageCompanyReserve\"\r
 
     app_global_get\r
 
-    byte \"ClifAmountCompanyReserve\"\r
+    byte \"withdrawnAmountAmountCompanyReserve\"\r
 
     app_global_get\r
 
@@ -1101,35 +1079,15 @@ tealCode: "#pragma version 6\r
 
     callsub signTransaction_0\r
 
-    main_l18:\r
+    main_l16:\r
 
     int 1\r
 
     return\r
 
-    main_l19:\r
+    main_l17:\r
 
-    global LatestTimestamp\r
-
-    byte \"initialTime\"\r
-
-    app_global_get\r
-
-    int 31556952\r
-
-    +\r
-
-    >\r
-
-    bnz main_l21\r
-
-    int 0\r
-
-    return\r
-
-    main_l21:\r
-
-    byte \"ClifAmountPrivateInvestors\"\r
+    byte \"WithdrawnAmountPrivateInvestors\"\r
 
     byte \"percentagePrivateInvestors\"\r
 
@@ -1147,31 +1105,11 @@ tealCode: "#pragma version 6\r
 
     callsub functionToWithdraw_1\r
 
-    b main_l18\r
+    b main_l16\r
 
-    main_l22:\r
+    main_l18:\r
 
-    global LatestTimestamp\r
-
-    byte \"initialTime\"\r
-
-    app_global_get\r
-
-    int 31556952\r
-
-    +\r
-
-    >\r
-
-    bnz main_l24\r
-
-    int 0\r
-
-    return\r
-
-    main_l24:\r
-
-    byte \"ClifAmountTeam\"\r
+    byte \"WithdrawnAmountTeam\"\r
 
     byte \"percentageTeam\"\r
 
@@ -1189,31 +1127,11 @@ tealCode: "#pragma version 6\r
 
     callsub functionToWithdraw_1\r
 
-    b main_l18\r
+    b main_l16\r
 
-    main_l25:\r
+    main_l19:\r
 
-    global LatestTimestamp\r
-
-    byte \"initialTime\"\r
-
-    app_global_get\r
-
-    int 31556952\r
-
-    +\r
-
-    >\r
-
-    bnz main_l27\r
-
-    int 0\r
-
-    return\r
-
-    main_l27:\r
-
-    byte \"ClifAmountAdvisors\"\r
+    byte \"WithdrawnAmountAdvisors\"\r
 
     byte \"percentageAdvisors\"\r
 
@@ -1231,9 +1149,9 @@ tealCode: "#pragma version 6\r
 
     callsub functionToWithdraw_1\r
 
-    b main_l18\r
+    b main_l16\r
 
-    main_l28:\r
+    main_l20:\r
 
     txn RekeyTo\r
 
@@ -1317,31 +1235,31 @@ tealCode: "#pragma version 6\r
 
     return\r
 
-    main_l29:\r
+    main_l21:\r
 
     int 0\r
 
     return\r
 
-    main_l30:\r
+    main_l22:\r
 
     int 0\r
 
     return\r
 
-    main_l31:\r
+    main_l23:\r
 
     int 1\r
 
     return\r
 
-    main_l32:\r
+    main_l24:\r
 
     int 0\r
 
     return\r
 
-    main_l33:\r
+    main_l25:\r
 
     txn RekeyTo\r
 
@@ -1431,27 +1349,33 @@ tealCode: "#pragma version 6\r
 
     app_global_put\r
 
-    byte \"ClifAmountAdvisors\"\r
+    byte \"WithdrawnAmountAdvisors\"\r
 
     int 0\r
 
     app_global_put\r
 
-    byte \"ClifAmountPrivateInvestors\"\r
+    byte \"WithdrawnAmountPrivateInvestors\"\r
 
     int 0\r
 
     app_global_put\r
 
-    byte \"ClifAmountTeam\"\r
+    byte \"WithdrawnAmountTeam\"\r
 
     int 0\r
 
     app_global_put\r
 
-    byte \"ClifAmountCompanyReserve\"\r
+    byte \"WithdrawnAmountCompanyReserve\"\r
 
     int 0\r
+
+    app_global_put\r
+
+    byte \"initialTime\"\r
+
+    global LatestTimestamp\r
 
     app_global_put\r
 
@@ -1523,6 +1447,14 @@ tealCode: "#pragma version 6\r
 
     assert\r
 
+    gtxn 0 Amount\r
+
+    int 1000\r
+
+    ==\r
+
+    assert\r
+
     itxn_begin\r
 
     int axfer\r
@@ -1575,7 +1507,7 @@ tealCode: "#pragma version 6\r
 
     load 4\r
 
-    int 12\r
+    int 13\r
 
     <\r
 

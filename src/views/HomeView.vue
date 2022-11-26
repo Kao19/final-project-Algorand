@@ -55,43 +55,52 @@ export default {
    
     methods: {
 
-        async getGlobalStates(pourcentage,clif){
+        async getGlobalStates(pourcentage,withdrawable){
             let applicationInfoResponse1 = await this.algodClient.getApplicationByID(this.vestingAppId).do();
 
             for(let i=0; i<applicationInfoResponse1['params']['global-state'].length; i++){
                 if(applicationInfoResponse1['params']['global-state'][i].key === window.btoa(pourcentage)){
                     console.log("pourcentage" , applicationInfoResponse1['params']['global-state'][i].value.uint);
                     this.asset_per = applicationInfoResponse1['params']['global-state'][i].value.uint;
-                }
-                if(applicationInfoResponse1['params']['global-state'][i].key === window.btoa(clif)){
-                    console.log("clif" , applicationInfoResponse1['params']['global-state'][i].value.uint);
-                    this.withdrawabale_amount = this.asset_per - applicationInfoResponse1['params']['global-state'][i].value.uint;
-                    console.log("this: ",this.withdrawabale_amount);
-                }  
-                   
+                }   
             }
+            for(let i=0; i<applicationInfoResponse1['params']['global-state'].length; i++){
+                if(applicationInfoResponse1['params']['global-state'][i].key === window.btoa(withdrawable)){
+                    console.log("withdrawable" , applicationInfoResponse1['params']['global-state'][i].value.uint);
+                    this.withdrawabale_amount = applicationInfoResponse1['params']['global-state'][i].value.uint;
+                    let calcul = ((this.asset_per * (((Math.floor(new Date().getTime() / 1000)-this.vestingTimeStamp)/2629800)-1))/24) - this.withdrawabale_amount;
+                    if(withdrawable === "WithdrawnAmountCompanyReserve"){
+                        this.withdrawabale_amount = this.asset_per - this.withdrawabale_amount;
+                        break;
+                    }
+                    if(calcul<0){
+                        this.withdrawabale_amount=0;
+                    }
+                    else this.withdrawabale_amount=calcul;
+                }
+            } 
         },
 
         async VACamount(sender){
             switch(sender) {
                 //team
                 case process.env.VUE_APP_ACC2_ADDR:
-                    this.getGlobalStates('percentageTeam','ClifAmountTeam');
+                    this.getGlobalStates('percentageTeam','WithdrawnAmountTeam');
                     break;
                 
                 //advisors
                 case process.env.VUE_APP_ACC3_ADDR:
-                    this.getGlobalStates('percentageAdvisors','ClifAmountAdvisors');
+                    this.getGlobalStates('percentageAdvisors','WithdrawnAmountAdvisors');
                     break;
 
                 //private investors
                 case process.env.VUE_APP_ACC4_ADDR:
-                    this.getGlobalStates('percentagePrivateInvestors','ClifAmountPrivateInvestors');
+                    this.getGlobalStates('percentagePrivateInvestors','WithdrawnAmountPrivateInvestors');
                     break;
                 
                 //company reserve
                 case process.env.VUE_APP_ACC1_ADDR:
-                    this.getGlobalStates('percentageCompanyReserve','ClifAmountCompanyReserve');
+                    this.getGlobalStates('percentageCompanyReserve','WithdrawnAmountCompanyReserve');
                     break;
             }           
         },

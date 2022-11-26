@@ -135,7 +135,7 @@ export default {
 
 
 
-            let appArgs = [new Uint8Array(Buffer.from("withdrawFromVesting")), algosdk.encodeUint64(Number(this.vestingTimeStamp)), algosdk.encodeUint64(Number(this.asset_amount))];
+            let appArgs = [new Uint8Array(Buffer.from("withdrawFromVesting")), algosdk.encodeUint64(Number(this.asset_amount))];
 
             let withdaw = algosdk.makeApplicationNoOpTxn(
                 this.sender, 

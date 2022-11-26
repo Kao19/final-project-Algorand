@@ -14,10 +14,9 @@ const clearStateFileVesting = "vesting_clearstate.py";
 const RUNTIME_ERR1009 = 'RUNTIME_ERR1009: TEAL runtime encountered err opcode'; 
 const RUNTIME_ERR1007= 'Teal code rejected by logic';
 
-let deployTime;
-const year = 31556952;
 const month = 2629800;
 const week = 604800;
+
 
 describe("Negative Tests", function () {
     
@@ -160,15 +159,13 @@ describe("Negative Tests", function () {
         appInfoMint = initMint();
         const ID = createdAsset(master.account);
         const appInfoVesting = initVesting(ID);
-        deployTime = appInfoVesting.timestamp;
-       
+        
         common.saveVestingAddr(runtime,
             master.account,
             appInfoMint.appID,
             appInfoVesting.applicationAccount);
 
-        common.saveTimestamp(runtime,master,appInfoVesting.appID,deployTime);
-
+        
         //do opt in
         common.optInVesting(runtime, master.account, appInfoVesting.appID, ID);
         
@@ -194,15 +191,13 @@ describe("Negative Tests", function () {
         appInfoMint = initMint();
         const ID = createdAsset(master.account);
         const appInfoVesting = initVesting(ID);
-        deployTime = appInfoVesting.timestamp;
-       
+        
         common.saveVestingAddr(runtime,
             master.account,
             appInfoMint.appID,
             appInfoVesting.applicationAccount);
 
-        common.saveTimestamp(runtime,master,appInfoVesting.appID,deployTime);
-
+        
         //do opt in
         common.optInVesting(runtime, master.account, appInfoVesting.appID, ID);
         
@@ -218,9 +213,9 @@ describe("Negative Tests", function () {
             
         })
 
-        runtime.setRoundAndTimestamp(2, deployTime + year + week);
+        runtime.setRoundAndTimestamp(2, 13 * month + week);
         
-        assert.throws(() => { common.withdrawFromVesting(runtime,privateInvestors.account,appInfoVesting.appID,appInfoVesting.applicationAccount,ID,20000000,privateInvestors.account,1000)}, RUNTIME_ERR1009);
+        assert.throws(() => { common.withdrawFromVesting(runtime,privateInvestors.account,appInfoVesting.appID,appInfoVesting.applicationAccount,ID,15000000,privateInvestors.account,1000)}, RUNTIME_ERR1009);
 
     }).timeout(20000); 
 
@@ -230,15 +225,13 @@ describe("Negative Tests", function () {
         appInfoMint = initMint();
         const ID = createdAsset(master.account);
         const appInfoVesting = initVesting(ID);
-        deployTime = appInfoVesting.timestamp;
-       
+        
         common.saveVestingAddr(runtime,
             master.account,
             appInfoMint.appID,
             appInfoVesting.applicationAccount);
 
-        common.saveTimestamp(runtime,master,appInfoVesting.appID,deployTime);
-
+        
         //do opt in
         common.optInVesting(runtime, master.account, appInfoVesting.appID, ID);
         
@@ -254,7 +247,7 @@ describe("Negative Tests", function () {
             
         })
 
-        runtime.setRoundAndTimestamp(2, deployTime + year + month + week);
+        runtime.setRoundAndTimestamp(2, 13 * month + week);
 
         common.withdrawFromVesting(runtime,privateInvestors.account,appInfoVesting.appID,appInfoVesting.applicationAccount,ID,300000,privateInvestors.account,1000);
         
@@ -268,15 +261,13 @@ describe("Negative Tests", function () {
         appInfoMint = initMint();
         const ID = createdAsset(master.account);
         const appInfoVesting = initVesting(ID);
-        deployTime = appInfoVesting.timestamp;
-       
+        
         common.saveVestingAddr(runtime,
             master.account,
             appInfoMint.appID,
             appInfoVesting.applicationAccount);
 
-        common.saveTimestamp(runtime,master,appInfoVesting.appID,deployTime);
-
+        
         //do opt in
         common.optInVesting(runtime, master.account, appInfoVesting.appID, ID);
         
@@ -302,15 +293,14 @@ describe("Negative Tests", function () {
         appInfoMint = initMint();
         const ID = createdAsset(master.account);
         const appInfoVesting = initVesting(ID);
-        deployTime = appInfoVesting.timestamp;
-       
+        
+        
         common.saveVestingAddr(runtime,
             master.account,
             appInfoMint.appID,
             appInfoVesting.applicationAccount);
 
-        common.saveTimestamp(runtime,master,appInfoVesting.appID,deployTime);
-
+        
         //do opt in
         common.optInVesting(runtime, master.account, appInfoVesting.appID, ID);
         

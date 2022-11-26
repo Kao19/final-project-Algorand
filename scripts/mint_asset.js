@@ -110,16 +110,6 @@ async function run(runtimeEnv, deployer) {
         appArgs: acc,
     });
 
-    // callApp to store initial time in global state
-    const initTime  = [convert.stringToBytes("initTime"),convert.uint64ToBigEndian(appVesting.timestamp)];
-    await executeTransaction(deployer, {
-        type: types.TransactionType.CallApp,
-        sign: types.SignType.SecretKey,
-        fromAccount: master,
-        appID: appVesting.appID,
-        payFlags: { totalFee: 1000 },
-        appArgs: initTime,
-    });
 
     // transfer algos to vesting contract 
     await executeTransaction(deployer, {

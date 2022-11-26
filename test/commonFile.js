@@ -91,17 +91,6 @@ const withdrawFromVesting = (runtime,acc, appID,appAccount, assets, amountToWith
     ]);
 };
 
-const saveTimestamp = (runtime,acc, applID, tmstmp) => {
-    const initTime  = [convert.stringToBytes("initTime"),convert.uint64ToBigEndian(tmstmp)];
-    runtime.executeTx({
-        type: types.TransactionType.CallApp,
-        sign: types.SignType.SecretKey,
-        fromAccount: acc.account,
-        appID: applID,
-        payFlags: { totalFee: 1000 },
-        appArgs: initTime,
-    });
-};
 
 const saveVestingAddr = (runtime, account, appID, VestingAppAdress) => {
     const save  = ["vestingAccount"].map(convert.stringToBytes);
@@ -123,6 +112,5 @@ module.exports = {
     optInVesting,
     transferAsset,
     withdrawFromVesting,
-    saveTimestamp,
     saveVestingAddr
 }
