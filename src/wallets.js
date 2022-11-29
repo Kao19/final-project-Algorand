@@ -31,7 +31,9 @@ const sendAlgoSignerGTransaction = async (txns, algodClient) => {
                 .sendRawTransaction(binarySignedTxs)
                 .do();
             console.log(response);
-
+            console.log(response.txId);
+            const tmp = await algosdk.waitForConfirmation(algodClient,response.txId,2);
+            console.log(tmp);
             return response;
         } catch (err) {
             console.error(err);
@@ -59,6 +61,8 @@ const sendAlgoSignerTransaction = async (txn, algodClient) => {
             let binarySignedTx = AlgoSigner.encoding.base64ToMsgpack(signedTxs[0].blob);
 
             const response = await algodClient.sendRawTransaction(binarySignedTx).do();
+            const tmp = await algosdk.waitForConfirmation(algodClient,response.txId,2);
+            console.log(tmp);
             console.log(response);
 
             return response;

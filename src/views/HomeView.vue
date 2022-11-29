@@ -46,7 +46,7 @@ export default {
         };
     },
     created(){
-        this.algodClient = getAlgodClient("Localhost");
+        this.algodClient = getAlgodClient(this.network);
         const VestingApp = config.default.metadata;
         this.vestingAppAddress = VestingApp.VestingAppAddress;
         this.vestingAppId = VestingApp.VestingAppId;
@@ -55,7 +55,7 @@ export default {
    
     methods: {
 
-        async getGlobalStates(pourcentage,withdrawable){
+        async getGlobalStates(pourcentage,withdrawn){
             let applicationInfoResponse1 = await this.algodClient.getApplicationByID(this.vestingAppId).do();
 
             for(let i=0; i<applicationInfoResponse1['params']['global-state'].length; i++){
@@ -65,18 +65,22 @@ export default {
                 }   
             }
             for(let i=0; i<applicationInfoResponse1['params']['global-state'].length; i++){
-                if(applicationInfoResponse1['params']['global-state'][i].key === window.btoa(withdrawable)){
-                    console.log("withdrawable" , applicationInfoResponse1['params']['global-state'][i].value.uint);
+                if(applicationInfoResponse1['params']['global-state'][i].key === window.btoa(withdrawn)){
+                    console.log("withdrawn" , applicationInfoResponse1['params']['global-state'][i].value.uint);
                     this.withdrawabale_amount = applicationInfoResponse1['params']['global-state'][i].value.uint;
-                    let calcul = ((this.asset_per * (((Math.floor(new Date().getTime() / 1000)-this.vestingTimeStamp)/2629800)-1))/24) - this.withdrawabale_amount;
-                    if(withdrawable === "WithdrawnAmountCompanyReserve"){
+                    
+                    let currMonth = Math.floor((Math.floor(new Date().getTime() / 1000)-this.vestingTimeStamp) / 2629800);
+                    let calcul = (this.asset_per * (currMonth-1)/24) - this.withdrawabale_amount;
+                    console.log(currMonth);
+                    if(withdrawn === "WithdrawnAmountCompanyReserve"){
                         this.withdrawabale_amount = this.asset_per - this.withdrawabale_amount;
                         break;
                     }
-                    if(calcul<0){
-                        this.withdrawabale_amount=0;
-                    }
-                    else this.withdrawabale_amount=calcul;
+                    if(currMonth <13)
+                        this.withdrawabale_amount = 0;
+                    else if(currMonth > 24)
+                        this.withdrawabale_amount = this.asset_per - this.withdrawabale_amount
+                    else this.withdrawabale_amount+=calcul;
                 }
             } 
         },

@@ -161,7 +161,7 @@ export default {
                 this.updateTxn(txnID.txId);
             }
             else{
-                this.$alert("something went wrong with your transaction!"); // make sure vue-simple-alert is installed
+                this.$alert("sorry! you can not withdraw now"); // make sure vue-simple-alert is installed
             }
         
 
