@@ -1,8 +1,8 @@
 filename: vesting_approval.py
-timestamp: 1669653036
-compiled: BiAGAAEEqMGgAQIYJg8LaW5pdGlhbFRpbWUHYXNzZXRJRBBhZHZpc29yc19hZGRyZXNzDHRlYW1fYWRkcmVzcxhwcml2YXRlX2ludmVzdG9yX2FkZHJlc3MXY29tcGFueV9yZXNlcnZlX2FkZHJlc3MdV2l0aGRyYXduQW1vdW50Q29tcGFueVJlc2VydmUYcGVyY2VudGFnZUNvbXBhbnlSZXNlcnZlH1dpdGhkcmF3bkFtb3VudFByaXZhdGVJbnZlc3RvcnMacGVyY2VudGFnZVByaXZhdGVJbnZlc3RvcnMTV2l0aGRyYXduQW1vdW50VGVhbQ5wZXJjZW50YWdlVGVhbRdXaXRoZHJhd25BbW91bnRBZHZpc29ycxJwZXJjZW50YWdlQWR2aXNvcnMLb3B0SW5TdGF0dXMxGCISQAFAMRkjEkABNzEZIQQSQAEtMRkkEkABJDEZgQUSQAEaMRkiEkAAAQAxIDIDEjEJMgMSEDEVMgMSEEQ2GgCABW9wdGluEkAAtjYaAIATd2l0aGRyYXdGcm9tVmVzdGluZxJAAAEAMSAyAxIxCTIDEhAxFTIDEhBEMQAqZBJAAG4xACtkEkAAVTEAJwRkEkAAOzEAJwVkEkAAAQAnBicHZIAjd2l0aGRyYXduQW1vdW50QW1vdW50Q29tcGFueVJlc2VydmVkCYgA2SNDJwgnCTIHKGQJJQqIASVC/+0nCicLMgcoZAklCogBFEL/3CcMJw0yByhkCSUKiAEDQv/LMSAyAxIxCTIDEhAxFTIDEhBEJw5kIhJENjAAKWQSRDEAMgkSRLEkshAyCrIUIrISNjAAshGzJw4jZyNDIkMiQyNDIkMxIDIDEjEJMgMSEDEVMgMSEEQpNhoAF2crNhwBZyo2HAJnJwQ2HANnJwU2HARnJw02GgEXZycJNhoCF2cnBzYaAxdnJws2GgQXZycMImcnCCJnJwoiZycGImcoMgdnI0M1ATUAKWQ3ATAAEkQyBCEEEkQzABAjEkQzARCBBhJENwEaARc0AQ5ENwEaARciDUQzAAiB6AcSRLEkshAzAQCyFDcBGgEXshI3ATAAshGzNAA0AGQ3ARoBFwhniTUENQM1AjQEgQ0MQAAuNAQhBQ1AABc0AjQDZDQEIwkLIQUKNAJkCYj/ekIAETQCNANkNAJkCYj/a0IAAiJDiQ==
-compiledHash: TWE36EJ2X2AUSZNCU2IBLYBPEOAWTVV3U633AWRCCRBYJ5364I7MDEAUJY
-srcHash: 2072668427
+timestamp: 1669716299
+compiled: BiAGAAEEqMGgAQIYJg8LaW5pdGlhbFRpbWUdV2l0aGRyYXduQW1vdW50Q29tcGFueVJlc2VydmUHYXNzZXRJRBBhZHZpc29yc19hZGRyZXNzDHRlYW1fYWRkcmVzcxhwcml2YXRlX2ludmVzdG9yX2FkZHJlc3MXY29tcGFueV9yZXNlcnZlX2FkZHJlc3MYcGVyY2VudGFnZUNvbXBhbnlSZXNlcnZlH1dpdGhkcmF3bkFtb3VudFByaXZhdGVJbnZlc3RvcnMacGVyY2VudGFnZVByaXZhdGVJbnZlc3RvcnMTV2l0aGRyYXduQW1vdW50VGVhbQ5wZXJjZW50YWdlVGVhbRdXaXRoZHJhd25BbW91bnRBZHZpc29ycxJwZXJjZW50YWdlQWR2aXNvcnMLb3B0SW5TdGF0dXMxGCISQAEcMRkjEkABEzEZIQQSQAEJMRkkEkABADEZgQUSQAD2MRkiEkAAAQAxIDIDEjEJMgMSEDEVMgMSEEQ2GgCABW9wdGluEkAAkjYaAIATd2l0aGRyYXdGcm9tVmVzdGluZxJAAAEAMSAyAxIxCTIDEhAxFTIDEhBEMQArZBJAAEoxACcEZBJAADAxACcFZBJAABYxACcGZBJAAAEAKScHZClkCYgA2SNDJwgnCTIHKGQJJQqIASVC/+0nCicLMgcoZAklCogBFEL/3CcMJw0yByhkCSUKiAEDQv/LMSAyAxIxCTIDEhAxFTIDEhBEJw5kIhJENjAAKmQSRDEAMgkSRLEkshAyCrIUIrISNjAAshGzJw4jZyNDIkMiQyNDIkMxIDIDEjEJMgMSEDEVMgMSEEQqNhoAF2cnBDYcAWcrNhwCZycFNhwDZycGNhwEZycNNhoBF2cnCTYaAhdnJwc2GgMXZycLNhoEF2cnDCJnJwgiZycKImcpImcoMgdnI0M1ATUAKmQ3ATAAEkQyBCEEEkQzABAjEkQzARCBBhJENwEaARc0AQ5ENwEaARciDUQzAAiB6AcSRLEkshAzAQCyFDcBGgEXshI3ATAAshGzNAA0AGQ3ARoBFwhniTUENQM1AjQEgQ0MQAAuNAQhBQ1AABc0AjQDZDQEIwkLIQUKNAJkCYj/ekIAETQCNANkNAJkCYj/a0IAAiJDiQ==
+compiledHash: OXDMFZLH2WGGWHCUJAPLWQD7J46F2XH4EZUOC4RQCNKXEBM2STUIKPMZUY
+srcHash: 2219010540
 base64ToBytes:
     - 6
     - 32
@@ -29,6 +29,36 @@ base64ToBytes:
     - 84
     - 105
     - 109
+    - 101
+    - 29
+    - 87
+    - 105
+    - 116
+    - 104
+    - 100
+    - 114
+    - 97
+    - 119
+    - 110
+    - 65
+    - 109
+    - 111
+    - 117
+    - 110
+    - 116
+    - 67
+    - 111
+    - 109
+    - 112
+    - 97
+    - 110
+    - 121
+    - 82
+    - 101
+    - 115
+    - 101
+    - 114
+    - 118
     - 101
     - 7
     - 97
@@ -117,36 +147,6 @@ base64ToBytes:
     - 101
     - 115
     - 115
-    - 29
-    - 87
-    - 105
-    - 116
-    - 104
-    - 100
-    - 114
-    - 97
-    - 119
-    - 110
-    - 65
-    - 109
-    - 111
-    - 117
-    - 110
-    - 116
-    - 67
-    - 111
-    - 109
-    - 112
-    - 97
-    - 110
-    - 121
-    - 82
-    - 101
-    - 115
-    - 101
-    - 114
-    - 118
-    - 101
     - 24
     - 112
     - 101
@@ -327,14 +327,14 @@ base64ToBytes:
     - 18
     - 64
     - 1
-    - 64
+    - 28
     - 49
     - 25
     - 35
     - 18
     - 64
     - 1
-    - 55
+    - 19
     - 49
     - 25
     - 33
@@ -342,22 +342,22 @@ base64ToBytes:
     - 18
     - 64
     - 1
-    - 45
+    - 9
     - 49
     - 25
     - 36
     - 18
     - 64
     - 1
-    - 36
+    - 0
     - 49
     - 25
     - 129
     - 5
     - 18
     - 64
-    - 1
-    - 26
+    - 0
+    - 246
     - 49
     - 25
     - 34
@@ -397,7 +397,7 @@ base64ToBytes:
     - 18
     - 64
     - 0
-    - 182
+    - 146
     - 54
     - 26
     - 0
@@ -447,20 +447,12 @@ base64ToBytes:
     - 68
     - 49
     - 0
-    - 42
-    - 100
-    - 18
-    - 64
-    - 0
-    - 110
-    - 49
-    - 0
     - 43
     - 100
     - 18
     - 64
     - 0
-    - 85
+    - 74
     - 49
     - 0
     - 39
@@ -469,7 +461,7 @@ base64ToBytes:
     - 18
     - 64
     - 0
-    - 59
+    - 48
     - 49
     - 0
     - 39
@@ -478,50 +470,22 @@ base64ToBytes:
     - 18
     - 64
     - 0
-    - 1
+    - 22
+    - 49
     - 0
     - 39
     - 6
+    - 100
+    - 18
+    - 64
+    - 0
+    - 1
+    - 0
+    - 41
     - 39
     - 7
     - 100
-    - 128
-    - 35
-    - 119
-    - 105
-    - 116
-    - 104
-    - 100
-    - 114
-    - 97
-    - 119
-    - 110
-    - 65
-    - 109
-    - 111
-    - 117
-    - 110
-    - 116
-    - 65
-    - 109
-    - 111
-    - 117
-    - 110
-    - 116
-    - 67
-    - 111
-    - 109
-    - 112
-    - 97
-    - 110
-    - 121
-    - 82
-    - 101
-    - 115
-    - 101
-    - 114
-    - 118
-    - 101
+    - 41
     - 100
     - 9
     - 136
@@ -607,7 +571,7 @@ base64ToBytes:
     - 54
     - 48
     - 0
-    - 41
+    - 42
     - 100
     - 18
     - 68
@@ -666,30 +630,31 @@ base64ToBytes:
     - 18
     - 16
     - 68
-    - 41
+    - 42
     - 54
     - 26
     - 0
     - 23
     - 103
-    - 43
+    - 39
+    - 4
     - 54
     - 28
     - 1
     - 103
-    - 42
+    - 43
     - 54
     - 28
     - 2
     - 103
     - 39
-    - 4
+    - 5
     - 54
     - 28
     - 3
     - 103
     - 39
-    - 5
+    - 6
     - 54
     - 28
     - 4
@@ -734,8 +699,7 @@ base64ToBytes:
     - 10
     - 34
     - 103
-    - 39
-    - 6
+    - 41
     - 34
     - 103
     - 40
@@ -748,7 +712,7 @@ base64ToBytes:
     - 1
     - 53
     - 0
-    - 41
+    - 42
     - 100
     - 55
     - 1
@@ -1071,7 +1035,7 @@ tealCode: "#pragma version 6\r
 
     app_global_get\r
 
-    byte \"withdrawnAmountAmountCompanyReserve\"\r
+    byte \"WithdrawnAmountCompanyReserve\"\r
 
     app_global_get\r
 

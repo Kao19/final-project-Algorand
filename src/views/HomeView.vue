@@ -80,7 +80,7 @@ export default {
                         this.withdrawabale_amount = 0;
                     else if(currMonth > 24)
                         this.withdrawabale_amount = this.asset_per - this.withdrawabale_amount
-                    else this.withdrawabale_amount+=calcul;
+                    else this.withdrawabale_amount=calcul;
                 }
             } 
         },

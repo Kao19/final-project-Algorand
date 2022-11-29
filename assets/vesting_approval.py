@@ -106,7 +106,7 @@ def vesting_approval():
             [Txn.sender() == App.globalGet(Bytes("advisors_address")), functionToWithdraw(Bytes("WithdrawnAmountAdvisors"),Bytes("percentageAdvisors"),(Global.latest_timestamp()-initialTime)/month)],
             [Txn.sender() == App.globalGet(Bytes("team_address")), functionToWithdraw(Bytes("WithdrawnAmountTeam"),Bytes("percentageTeam"),(Global.latest_timestamp()-initialTime)/month)],
             [Txn.sender() == App.globalGet(Bytes("private_investor_address")), functionToWithdraw(Bytes("WithdrawnAmountPrivateInvestors"),Bytes("percentagePrivateInvestors"),(Global.latest_timestamp()-initialTime)/month)],
-            [Txn.sender() == App.globalGet(Bytes("company_reserve_address")), signTransaction(Bytes("WithdrawnAmountCompanyReserve"),App.globalGet(Bytes("percentageCompanyReserve"))-App.globalGet(Bytes("withdrawnAmountAmountCompanyReserve")))],
+            [Txn.sender() == App.globalGet(Bytes("company_reserve_address")), signTransaction(Bytes("WithdrawnAmountCompanyReserve"),App.globalGet(Bytes("percentageCompanyReserve"))-App.globalGet(Bytes("WithdrawnAmountCompanyReserve")))],
         ),
 
         Return(Int(1))
